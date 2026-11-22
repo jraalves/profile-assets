@@ -26,6 +26,13 @@ denominador está descrito no README de cada repositório.
 | `ingress-gate.svg` / `.png` | Antes e depois do portao de entrada de um sistema fiscal: link aberto versus Ingress com TLS, oauth2-proxy, NetworkPolicy e dados sinteticos | o case anonimizado mostra o desenho sem mostrar o ambiente |
 | `retrato/avatar_rounded.png` | Retrato sobre fundo de tecnologia | identidade visual do perfil |
 
+Este repositório serve as imagens do perfil [@jraalves](https://github.com/jraalves).
+
+Os diagramas de borda (`ingress-gate`) são os mesmos manifestos validados em
+[fiscal-automation-case](https://github.com/jraalves/fiscal-automation-case).
+
+---
+
 ## Como referenciar num README
 
 ```html

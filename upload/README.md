@@ -32,6 +32,35 @@
 
 ---
 
+## 🔭 Índice de navegação
+
+> Clique para ir direto ao ponto. As seções desenhadas abrem e fecham na tela (acordeões nativos do GitHub, sem JavaScript).
+
+<p align="left">
+  <a href="#painel-ao-vivo"><img src="https://img.shields.io/badge/%F0%9F%93%9F_painel_ao_vivo-dados_ao_vivo-3fb950?style=flat-square" alt="Painel ao vivo"/></a>
+  <a href="#reposit%C3%B3rios-em-destaque"><img src="https://img.shields.io/badge/%F0%9F%93%8C_reposit%C3%B3rios-pinados-58a6ff?style=flat-square" alt="Repositórios em destaque"/></a>
+  <a href="#como-eu-penso-desenhado"><img src="https://img.shields.io/badge/%F0%9F%A7%A0_10_diagramas-pipeline%2C_slo%2C_aiops-bc8cff?style=flat-square" alt="Diagramas"/></a>
+  <a href="#gitops-aiops-e-finops"><img src="https://img.shields.io/badge/%E2%99%BB%EF%B8%8F_gitops%20%C2%B7_aiops%20%C2%B7_finops-8_pipelines-d29922?style=flat-square" alt="GitOps AIOps FinOps"/></a>
+  <a href="#cronologia-primeira--%C3%BAltima"><img src="https://img.shields.io/badge/%F0%9F%97%93_cronologia-2009%E2%86%92hoje-f778ba?style=flat-square" alt="Cronologia"/></a>
+  <a href="#interatividade-como-este-painel-se-atualiza"><img src="https://img.shields.io/badge/%F0%9F%94%81_interatividade-como_se_atualiza-f85149?style=flat-square" alt="Interatividade"/></a>
+  <a href="#english"><img src="https://img.shields.io/badge/%F0%9F%87%BA%F0%9F%87%B8_english_version-read_here-39c5cf?style=flat-square" alt="English"/></a>
+</p>
+
+| seção | o que você encontra | |
+|---|---|---|
+| [📟 Painel ao vivo](#painel-ao-vivo) | métricas reais renderizadas no clique | ⚡ |
+| [📌 Repositórios](#reposit%C3%B3rios-em-destaque) | os 6 fixados, por tipo de prova | 📌 |
+| [🧠 10 diagramas](#como-eu-penso-desenhado) | pipeline, SLO, traces, incidente, AIOps, FinOps | 🧠 |
+| [♻️ GitOps · AIOps · FinOps](#gitops-aiops-e-finops) | os pipelines que rotam nesses repositórios | ♻️ |
+| [🗓 Cronologia](#cronologia-primeira--%C3%BAltima) | primeira → última experiência, com a virada de cada era | 🗓 |
+| [🛠 O que eu resolvo](#o-que-eu-resolvo) | problemas → método → evidência | 🛠 |
+| [📚 Documentação](#documenta%C3%A7%C3%A3o-p%C3%BAblica) | cases anonimizados e referências | 📚 |
+| [🎓 Formação](#forma%C3%A7%C3%A3o-e-credenciais) | MBA, certificações SRE | 🎓 |
+| [🔁 Interatividade](#interatividade-como-este-painel-se-atualiza) | como cada bloco se atualiza sozinho | 🔁 |
+| [🇺🇸 English](#english) | same profile, English edition | 🇺🇸 |
+
+---
+
 ```promql
 count by (era) (career_span{pessoa="joaorenatoalves"})
 ```
@@ -87,6 +116,9 @@ Fontes: API pública do GitHub, `github-readme-stats`, `github-readme-streak-sta
 
 ---
 
+<details>
+  <summary><strong>▸ Repositórios em destaque</strong> <sub>abrir / fechar</sub></summary>
+
 ## Repositórios em destaque
 
 | repositório | o que ele faz, com número | stack | o que já foi verificado |
@@ -100,7 +132,13 @@ Fontes: API pública do GitHub, `github-readme-stats`, `github-readme-streak-sta
 | [profile-assets](https://github.com/jraalves/profile-assets) | os **12** diagramas deste perfil em SVG + PNG 2×, gerados por script a partir de dados | SVG puro, Python, Chromium headless | todos os arquivos respondem `200` sem token · XML válido |
 | [portfolio](https://github.com/jraalves/portfolio) | site de portfólio em Pages: trajetória como trace, pirâmide interativa e caso de automação fiscal anonimizado, em pt-BR e EN | HTML/CSS/JS estático | publicado em [jraalves.github.io/portfolio](https://jraalves.github.io/portfolio/) |
 
+
+</details>
+
 ## Como eu penso, desenhado
+
+<details>
+  <summary><img src="https://img.shields.io/badge/diagrama_01-pipeline%20do%20commit%20ao%20signal-58a6ff?style=flat-square&logo=githubcopilot&logoColor=white" alt="diagrama 1"/> <strong>Pipeline: do commit ao signal</strong> <sub>clique para abrir</sub></summary>
 
 ### 1. Pipeline: do commit ao signal
 
@@ -112,6 +150,12 @@ entrega deu certo.
 Gate humano fica onde o risco é alto; promoção canário, rollback e postmortem ficam onde a métrica
 já é critério de sucesso. Sem evidência, automação é só velocidade sem direção.
 
+
+</details>
+
+<details>
+  <summary><img src="https://img.shields.io/badge/diagrama_02-pirâmide%20de%20observabilidade%20onde%20cada%20pergunta%20é%20respondida-3fb950?style=flat-square&logo=githubcopilot&logoColor=white" alt="diagrama 2"/> <strong>Pirâmide de observabilidade: onde cada pergunta é respondida</strong> <sub>clique para abrir</sub></summary>
+
 ### 2. Pirâmide de observabilidade: onde cada pergunta é respondida
 
 <img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/pyramid.svg" width="100%" alt="Pirâmide de observabilidade com share de budget por camada"/>
@@ -119,6 +163,12 @@ já é critério de sucesso. Sem evidência, automação é só velocidade sem d
 Métrica alerta, trace localiza, log explica, profiling prova. Inverter a base (log em todo lugar,
 métrica tarde demais) é o erro que gera conta alta e resposta lenta — por isso o *share* de budget
 aparece desenhado, não escondido.
+
+
+</details>
+
+<details>
+  <summary><img src="https://img.shields.io/badge/diagrama_03-os%20quatro%20sinais%20que%20eu%20olho%20primeiro-bc8cff?style=flat-square&logo=githubcopilot&logoColor=white" alt="diagrama 3"/> <strong>Os quatro sinais que eu olho primeiro</strong> <sub>clique para abrir</sub></summary>
 
 ### 3. Os quatro sinais que eu olho primeiro
 
@@ -128,6 +178,12 @@ Latência no **p95 da jornada** (não a média do endpoint), tráfego com baseli
 erro sempre acompanhado do consumo de budget, saturação antes de o cliente sentir. Se o número não
 gera ação, ele vira dashboard morto — e dashboard morto é *toil* decorativo.
 
+
+</details>
+
+<details>
+  <summary><img src="https://img.shields.io/badge/diagrama_04-carreira%20como%20trace%20distribuído-d29922?style=flat-square&logo=githubcopilot&logoColor=white" alt="diagrama 4"/> <strong>Carreira como trace distribuído</strong> <sub>clique para abrir</sub></summary>
+
 ### 4. Carreira como trace distribuído
 
 Cada barra é um período real de trabalho, com sobreposições e lacunas visíveis. O gráfico mostra o
@@ -135,11 +191,23 @@ que o CV mostra.
 
 <img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/career-trace.svg" width="100%" alt="Trajetória 2009 a 2026 como waterfall de spans de trace"/>
 
+
+</details>
+
+<details>
+  <summary><img src="https://img.shields.io/badge/diagrama_05-stack%20agrupada%20por%20função-f778ba?style=flat-square&logo=githubcopilot&logoColor=white" alt="diagrama 5"/> <strong>Stack agrupada por função</strong> <sub>clique para abrir</sub></summary>
+
 ### 5. Stack agrupada por função
 
 <img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/stack.svg" width="100%" alt="Stack agrupada: observabilidade, nuvem e runtime, CI/CD e IaC, linguagem e dados, SRE e AIOps"/>
 
 A barra sob cada etiqueta é profundidade de uso real, não certificado comprado.
+
+
+</details>
+
+<details>
+  <summary><img src="https://img.shields.io/badge/diagrama_06-error%20budget%20como%20política%20de%20release-39c5cf?style=flat-square&logo=githubcopilot&logoColor=white" alt="diagrama 6"/> <strong>Error budget como política de release</strong> <sub>clique para abrir</sub></summary>
 
 ### 6. Error budget como política de release
 
@@ -151,6 +219,12 @@ consumo acumulado no mês; ao lado, o que cada estado proíbe e quem assina.
 Release congelado por número tem mais chance de ser respeitado do que por cansaço. E a regra volta à
 mesa no estado `RECOVERY`, junto com o post-mortem — senão o portão vira punição, não política.
 
+
+</details>
+
+<details>
+  <summary><img src="https://img.shields.io/badge/diagrama_07-anatomia%20de%20um%20incidente-f85149?style=flat-square&logo=githubcopilot&logoColor=white" alt="diagrama 7"/> <strong>Anatomia de um incidente</strong> <sub>clique para abrir</sub></summary>
+
 ### 7. Anatomia de um incidente
 
 A linha do tempo é o produto. Cada fase tem dono, e a janela `introduced → detected` é a mais barata
@@ -161,6 +235,12 @@ de encurtar com arquitetura (sacrifício de cardinalidade, regra de arco, SLO de
 `MTTL` existe no desenho de propósito: se o post-mortem não muda o sistema, o próximo incidente é
 agendamento, não surpresa. As durações são do `lab-03` com dados sintéticos; os percentuais do CV
 estão rotulados como tal.
+
+
+</details>
+
+<details>
+  <summary><img src="https://img.shields.io/badge/diagrama_08-agente%20de%20aiops%20com%20veredito%20por%20evidência-58a6ff?style=flat-square&logo=githubcopilot&logoColor=white" alt="diagrama 8"/> <strong>Agente de AIOps com veredito por evidência</strong> <sub>clique para abrir</sub></summary>
 
 ### 8. Agente de AIOps com veredito por evidência
 
@@ -174,6 +254,12 @@ No laboratório que reproduz o método, o agente acerta 89,9% de categoria e 76,
 incidentes sintéticos, contra 32,9% do baseline da classe majoritária. Sem esse baseline, o primeiro
 número é enfeite.
 
+
+</details>
+
+<details>
+  <summary><img src="https://img.shields.io/badge/diagrama_09-capacidade%20e%20finops%20na%20mesma%20reunião-3fb950?style=flat-square&logo=githubcopilot&logoColor=white" alt="diagrama 9"/> <strong>Capacidade e FinOps na mesma reunião</strong> <sub>clique para abrir</sub></summary>
+
 ### 9. Capacidade e FinOps na mesma reunião
 
 Projeção com sazonalidade de fechamento, faixa de ±25% na demanda e a data em que a decisão ainda é
@@ -185,6 +271,12 @@ Escalar cedo é decisão de sprint; esperar o dia D é compra sob pressão com o
 Autoescala sozinha reage a sintoma e pega o pico de fechamento frio — ela complementa a previsão,
 não a substitui.
 ---
+
+</details>
+
+<details>
+  <summary><img src="https://img.shields.io/badge/diagrama_10-a%20porta%20de%20entrada%20de%20um%20sistema%20sensível-bc8cff?style=flat-square&logo=githubcopilot&logoColor=white" alt="diagrama 10"/> <strong>A porta de entrada de um sistema sensível</strong> <sub>clique para abrir</sub></summary>
+
 ### 10. A porta de entrada de um sistema sensível
 O padrão que eu uso quando uma aplicação toca dado de terceiro e ainda assim precisa ser visitável:
 host de exemplo (`automacao.github.io`), TLS obrigatório com redirect, autenticação delegada no
@@ -195,6 +287,50 @@ Isso não é enfeite de arquitetura: é o que impede que um painel de auditoria 
 GitHub com sessão aberta. Está reproduzido em manifestos validáveis em
 [fiscal-automation-case](https://github.com/jraalves/fiscal-automation-case).
 ---
+
+</details>
+
+
+## GitOps, AIOps e FinOps
+
+Os pipelines abaixo **rodam nos repositórios deste perfil** (GitHub Actions). Cada card aponta para
+a definição em YAML: dá para ler o `on:`, o `jobs:` e o que falha quando falha.
+
+| pipeline | gatilho | o que prova | definição |
+|---|---|---|---|
+| **Golden signals / SLO** | `push`, `pull_request`, `workflow_dispatch` | thresholds de latência, tráfego, erros e saturação versionados; budget queimado vira bloqueio de release | [yaml](https://github.com/jraalves/profile-assets/blob/main/upload/observability-golden-signals-stack--ci.yml) |
+| **Correlação OTel** | `push` + `pull_request` | desenho de correlação Linux ↔ Mainframe validado em CI | [yaml](https://github.com/jraalves/profile-assets/blob/main/upload/otel-correlation-design--ci.yml) |
+| **Secret guard** | `pull_request` | nenhum segredo atravessa o merge; quem copia o repositório não reusa credencial | [yaml](https://github.com/jraalves/profile-assets/blob/main/upload/git-secret-guard--ci.yml) |
+| **Labs de SRE** | `push` + `pull_request` | lint, testes e checagem de anonimato de runbooks e dashboards | [yaml](https://github.com/jraalves/profile-assets/blob/main/upload/sre-senior-lab--labs.yml) |
+| **Agente AIOps** | `pull_request` | portas e contratos do referencial de agentes de diagnóstico | [yaml](https://github.com/jraalves/profile-assets/blob/main/upload/sre-aiops-agent-reference--ci.yml) |
+
+```text
+        ┌──────── commit ────────┐
+        │  PR + lint + tests     │
+        └───────────┬────────────┘
+                    ▼        GitOps: o declarativo é a fonte da verdade
+   ArgoCD sync ──► cluster ──► rollout ──► SLO burn (golden signals)
+                    │                            │
+                    │                            ▼
+                    │        AIOps: agente cruza métrica + ticket + deploy
+                    │        → hipótese com evidência, MTTR e recorrência
+                    ▼
+   FinOps: custo por ambiente/serviço entra na mesma revisão de capacidade
+```
+
+<p align="left">
+  <img src="https://img.shields.io/badge/GitOps-ArgoCD%20%C2%B7%20Terraform-bc8cff?style=flat-square&logo=argo&logoColor=white" alt="GitOps"/>
+  <img src="https://img.shields.io/badge/AIOps-agentes%20de%20diagn%C3%B3stico-f778ba?style=flat-square&logo=openai&logoColor=white" alt="AIOps"/>
+  <img src="https://img.shields.io/badge/FinOps-custo%20por%20servi%C3%A7o-d29922?style=flat-square&logo=aws&logoColor=white" alt="FinOps"/>
+  <img src="https://img.shields.io/badge/CI-GitHub%20Actions-3fb950?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
+  <img src="https://img.shields.io/badge/OpenTelemetry-traces%20%2B%20correlation%20id-39c5cf?style=flat-square&logo=opentelemetry&logoColor=white" alt="OpenTelemetry"/>
+</p>
+
+---
+
+<details>
+  <summary><strong>▸ Cronologia (primeira → última)</strong> <sub>abrir / fechar</sub></summary>
+
 ## Cronologia (primeira → última)
 
 | Período | Papel | Onde | Evidência |
@@ -220,6 +356,12 @@ Sobreposições (2014–2015, ago–nov/2022, e freelancer com atual) e lacunas 
 mai–out/2025) existem e aparecem no gráfico. Disfarçar isso é a primeira coisa que um recrutador
 técnico percebe.
 
+
+</details>
+
+<details>
+  <summary><strong>▸ O que eu resolvo</strong> <sub>abrir / fechar</sub></summary>
+
 ## O que eu resolvo
 
 | problema | como eu entro | onde está documentado |
@@ -230,6 +372,12 @@ técnico percebe.
 | Toil repetitivo | playbooks, expurgo automatizado, runbook executável com aprovação humana | [sre-aiops-agent-reference](https://github.com/jraalves/sre-aiops-agent-reference) |
 | Nuvem cara sem explicação | capacity planning e FinOps com projeção de demanda virando compra planejada | [sre-senior-lab · lab-06/07](https://github.com/jraalves/sre-senior-lab) |
 | Credencial vazando no Git | hook com padrões de segredo, sanitização de histórico e varredura de resíduo | [git-secret-guard](https://github.com/jraalves/git-secret-guard) |
+
+
+</details>
+
+<details>
+  <summary><strong>▸ Documentação pública</strong> <sub>abrir / fechar</sub></summary>
 
 ## Documentação pública
 
@@ -246,6 +394,12 @@ Escrever é parte do trabalho, não um anexo. O que existe hoje, aberto para lei
 - **Portfólio** — [jraalves.github.io/portfolio](https://jraalves.github.io/portfolio/): a mesma
   trajetória em versão guiada, com página em português (principal) e em inglês.
 
+
+</details>
+
+<details>
+  <summary><strong>▸ Formação e credenciais</strong> <sub>abrir / fechar</sub></summary>
+
 ## Formação e credenciais
 
 - **MBA em Arquitetura de Soluções** — FIAP, 2014–2015.
@@ -256,6 +410,12 @@ Escrever é parte do trabalho, não um anexo. O que existe hoje, aberto para lei
 
 Idiomas, como no CV: português nativo; inglês, espanhol e francês em nível básico, em evolução — a
 seção em inglês deste README é documentação escrita do trabalho, não prova de conversação.
+
+
+</details>
+
+<details>
+  <summary><strong>▸ Sobre o que não está aqui</strong> <sub>abrir / fechar</sub></summary>
 
 ## Sobre o que não está aqui
 
@@ -271,6 +431,12 @@ seção em inglês deste README é documentação escrita do trabalho, não prov
 - Repositórios sob acordo de confidencialidade ficam privados. Preferido isso a expor o ambiente de
   quem me contratou.
 
+
+</details>
+
+<details>
+  <summary><strong>▸ Princípios que aparecem no código</strong> <sub>abrir / fechar</sub></summary>
+
 ## Princípios que aparecem no código
 
 - Todo alerta precisa de um caminho até um humano que possa agir; se não tem, é ruído.
@@ -280,6 +446,47 @@ seção em inglês deste README é documentação escrita do trabalho, não prov
 - Documentar é parte da operação: runbook que ninguém consegue seguir de madrugada não existe.
 - Perfil sem contador de visita, sem streak e sem troféu: o que prova qualquer coisa aqui é
   repositório com teste, portão de CI e texto que outra pessoa consegue seguir de madrugada.
+
+---
+
+
+</details>
+
+
+## Interatividade: como este painel se atualiza
+
+Nada aqui é print. Cada bloco tem uma fonte e uma frequência:
+
+| bloco | fonte | quando muda |
+|---|---|---|
+| Cartão de atividade e sequência | `github-readme-stats` / `streak-stats` sobre a API pública do GitHub | a cada abertura da página |
+| Repositórios, estrelas, contribuições | `shields.io` dynamic JSON → `api.github.com/users/jraalves` | a cada abertura da página |
+| Stack por família | `skillicons.dev` + `cdn.simpleicons.org` | quando eu troco a lista (commit) |
+| Diagramas | SVG versionados em `profile-assets` (Markdown `<img>`) | quando o desenho muda |
+| Cronologia e texto | este README | revisão a cada ciclo de trabalho |
+| Pipelines | GitHub Actions dos repositórios fixados | `schedule`, `push` e `workflow_dispatch` |
+
+Os repositórios privados (e os que viraram privados nesta revisão de exposição) **não entram em
+nenhuma contagem**: `count_private=false` nos cartões e nenhum número de cliente no texto.
+
+<details>
+  <summary><strong>▸ Mapa de cores e por que ele é assim</strong> <sub>paleta do tema escuro do GitHub</sub></summary>
+
+  | token | hex | uso |
+  |---|---|---|
+  | fundo | `#0d1117` | base do painel (igual ao GitHub dark) |
+  | painel | `#161b22` | cartões e blocos de código |
+  | azul | `#58a6ff` | títulos, links, nuvens |
+  | verde | `#3fb950` | saúde, SLO dentro do budget |
+  | roxo | `#bc8cff` | GitOps / declarativo |
+  | âmbar | `#d29922` | atenção, budget queimando, FinOps |
+  | rosa | `#f778ba` | AIOps / agentes |
+  | ciano | `#39c5cf` | OpenTelemetry / correlação |
+  | vermelho | `#f85149` | erro, burn rate alto |
+
+  Mesmo par de cores nos SVG, nos badges e no portfólio: quem abre o perfil e depois o site vê a
+  mesma linguagem visual.
+</details>
 
 ---
 

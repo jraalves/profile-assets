@@ -1,0 +1,185 @@
+<div align="right"><a href="https://jraalves.github.io/portfolio/"><img src="assets/retrato/avatar_rounded.png" width="92" alt="João Renato Alves"/></a></div>
+
+# João Renato Alves
+
+<img src="assets/banner.svg" width="100%" alt="Cartão de perfil: Especialista SRE, Observabilidade e AIOps"/>
+
+<p>
+  <a href="https://www.linkedin.com/in/joaorenatoalves-sre"><img src="https://img.shields.io/badge/LinkedIn-joaorenatoalves--sre-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="https://jraalves.github.io/portfolio/"><img src="https://img.shields.io/badge/portf%C3%B3lio-online-3fb950?style=flat-square&logo=githubpages&logoColor=white" alt="Portfólio"/></a>
+  <img src="https://img.shields.io/badge/Dynatrace%20%C2%B7%20Davis%20AI-observabilidade-3fb950?style=flat-square&logo=grafana&logoColor=white" alt="Dynatrace"/>
+  <img src="https://img.shields.io/badge/OpenTelemetry-correla%C3%A7%C3%A3o-39c5cf?style=flat-square&logo=opentelemetry&logoColor=white" alt="OpenTelemetry"/>
+  <img src="https://img.shields.io/badge/AWS%20%C2%B7%20EKS-kubernetes-58a6ff?style=flat-square&logo=amazoneks&logoColor=white" alt="AWS"/>
+  <img src="https://img.shields.io/badge/GitOps%20%C2%B7%20IaC-argocd%20%2B%20terraform-bc8cff?style=flat-square&logo=terraform&logoColor=white" alt="GitOps"/>
+  <img src="https://img.shields.io/badge/AIOps%20%C2%B7%20FinOps-agentes%20de%20diagn%C3%B3stico-f778ba?style=flat-square&logo=openai&logoColor=white" alt="AIOps"/>
+</p>
+
+**Especialista SRE | Observabilidade | MBA Arquitetura de Soluções | SRE Certified**
+
+```promql
+count by (era) (career_span{pessoa="joaorenatoalves"})
+```
+
+| série | valor | como foi medido |
+|---|---:|---|
+| `anos_em_tecnologia` | 17+ | 2009 → hoje: suporte, infraestrutura, middleware, SRE |
+| `anos_em_sre_observabilidade` | 7+ | capacidade, SLO, observabilidade e confiabilidade em produção crítica |
+| `ambientes_de_producao_critica` | 16 | plataformas com contrato de disponibilidade e plantão |
+| `mttr_em_incidente_critico` | −50% | antes/depois do processo de RCA e playbooks, mesma classe de incidente |
+| `tempo_de_deteccao` | −70% | janela introduced→detected, medida em dashboards de jornada |
+| `frequencia_de_deploy` | +90% | deploys/semana após GitOps com ArgoCD e pipeline de validação |
+
+Números relativos têm denominador descrito no README de cada repositório. Não publico volume de
+transações, SLA contratual ou resultado financeiro de cliente: isso é dado de quem pagou pela
+plataforma, não meu.
+
+---
+
+## Como eu penso, desenhado
+
+### 1. Pipeline: do commit ao signal
+
+GitOps não é ferramenta, é contrato. O que fecha o loop é a seta tracejada: a métrica decide se a
+entrega deu certo.
+
+<img src="assets/pipeline.svg" width="100%" alt="Pipeline GitOps: Developer, CI, Artifact, CD, Runtime e Observe com feedback de burn rate"/>
+
+Gate humano fica onde o risco é alto; promoção canário, rollback e postmortem ficam onde a métrica
+já é critério de sucesso. Sem evidência, automação é só velocidade sem direção.
+
+### 2. Pirâmide de observabilidade: onde cada pergunta é respondida
+
+<img src="assets/pyramid.svg" width="100%" alt="Pirâmide de observabilidade com share de budget por camada"/>
+
+Métrica alerta, trace localiza, log explica, profiling prova. Inverter a base (log em todo lugar,
+métrica tarde demais) é o erro que gera conta alta e resposta lenta — por isso o *share* de budget
+aparece desenhado, não escondido.
+
+### 3. Os quatro sinais que eu olho primeiro
+
+<img src="assets/golden.svg" width="100%" alt="Golden signals: latência p95, tráfego, erros e saturação"/>
+
+Latência no **p95 da jornada** (não a média do endpoint), tráfego com baseline sazonal por hora,
+erro sempre acompanhado do consumo de budget, saturação antes de o cliente sentir. Se o número não
+gera ação, ele vira dashboard morto — e dashboard morto é *toil* decorativo.
+
+### 4. Carreira como trace distribuído
+
+Cada barra é um período real de trabalho, com sobreposições e lacunas visíveis. O gráfico mostra o
+que o CV mostra.
+
+<img src="assets/career-trace.svg" width="100%" alt="Trajetória 2009 a 2026 como waterfall de spans de trace"/>
+
+### 5. Stack agrupada por função
+
+<img src="assets/stack.svg" width="100%" alt="Stack agrupada: observabilidade, nuvem e runtime, CI/CD e IaC, linguagem e dados, SRE e AIOps"/>
+
+A barra sob cada etiqueta é profundidade de uso real, não certificado comprado.
+
+---
+
+## Cronologia (primeira → última)
+
+| Período | Papel | Onde | Evidência |
+|---|---|---|---|
+| mar/2009 – dez/2009 | Estágio em Business Intelligence | Keyword Tecnologia | scripts, procedures, packages e views para sistemas de gestão |
+| out/2010 – jan/2013 | Analista de Sistemas Júnior | Masterdom · PRODESP · TJ-SP | manual online em HTML/CSS/JS e desenvolvimento J2EE no WebSphere |
+| jan/2013 – jan/2014 | Analista de Sistemas · Suporte a Aplicações | Produban · Banco Santander | portais de grande acesso em produção: Internet Banking e intranet |
+| jan/2014 – jan/2015 | Analista de Sistemas · Suporte a Aplicações | AGSNasoft · Banco Santander | suporte à implantação de infraestrutura de servidores e portais |
+| fev/2014 – fev/2015 | Analista de Infraestrutura Pleno | Capgemini · Bradesco | desenho da arquitetura de infraestrutura dos servidores WebSphere |
+| mar/2015 – mai/2017 | Analista de Middleware Pleno | Connectis · Telefônica/Vivo | migração do ambiente móvel/fixo de São Paulo para o NDC |
+| jan/2018 – jul/2018 | Analista de Middleware | HITSS · NET · Claro · Embratel | instalação, configuração e manutenção de WebLogic e Oracle SOA Suite |
+| ago/2018 – set/2019 | Analista de Middleware | Indra | deploy em integração contínua com pipeline Jenkins e atualização de imagens |
+| set/2019 – jan/2022 | SRE · Middleware | Vector ITC · Santander | aplicações de pagamento móvel e Internet Banking em alta disponibilidade |
+| fev/2022 – nov/2022 | Capacity Planning · SRE | Telefônica Tech · Vivo Digital | planejamento de capacidade em nuvens públicas/privadas e missão crítica |
+| ago/2022 – mar/2023 | Arquitetura de Soluções · Middleware · SRE | Financeira Alfa | arquitetura de middleware e distribuição de aplicações on-premises |
+| abr/2023 – dez/2023 | Middleware · DevOps Engineer · SRE | Meta · Tokio Marine Brasil | −50% no tempo médio de resposta a incidentes críticos e −70% no tempo de detecção |
+| dez/2023 – out/2024 | Site Reliability Engineer | Kalendae | acompanhamento de MTTR, MTBF, MTTA e MTTF junto a desenvolvimento e produto |
+| dez/2024 – abr/2025 | Site Reliability Engineer | Inmetrics · Claro (projeto E2E) | arquitetura do Capacity Claro E2E e calculadora de métricas de negócio |
+| nov/2025 – atual | Freelancer · Consultor de Tecnologia | JRA Corporation · ONEtoONE | plataforma de busca e gestão de informação fiscal + painéis de observabilidade como serviço |
+| abr/2026 – atual | Especialista em SRE e Observabilidade | Cielo · Barueri, SP | Dynatrace + Davis AI, Correlation ID entre Linux e Mainframe, plataforma interna de agentes de IA para SRE |
+
+Sobreposições (2014–2015, ago–nov/2022, e freelancer com atual) e lacunas (jun–dez/2017,
+mai–out/2025) existem e aparecem no gráfico. Disfarçar isso é a primeira coisa que um recrutador
+técnico percebe.
+
+## O que eu resolvo
+
+| problema | como eu entro | onde está documentado |
+|---|---|---|
+| Alerta demais, sinal de menos | correlação por tag, baseline por jornada, regra de arco em vez de threshold fixo | [observability-golden-signals-stack](https://github.com/jraalves/observability-golden-signals-stack) |
+| Incidente que ninguém sabe quanto custou | SLI/SLO com produto, error budget como moeda de release, MTTR e recorrência rastreáveis | [sre-senior-lab · lab-03](https://github.com/jraalves/sre-senior-lab) |
+| Jornada quebrada entre plataformas | Correlation ID e W3C Trace Context atravessando fronteira sem tracing nativo | [otel-correlation-design](https://github.com/jraalves/otel-correlation-design) |
+| Toil repetitivo | playbooks, expurgo automatizado, runbook executável com aprovação humana | [sre-aiops-agent-reference](https://github.com/jraalves/sre-aiops-agent-reference) |
+| Nuvem cara sem explicação | capacity planning e FinOps com projeção de demanda virando compra planejada | [sre-senior-lab · lab-06/07](https://github.com/jraalves/sre-senior-lab) |
+| Credencial vazando no Git | hook com padrões de segredo, sanitização de histórico e varredura de resíduo | [git-secret-guard](https://github.com/jraalves/git-secret-guard) |
+
+## Portfólio
+
+**[jraalves.github.io/portfolio](https://jraalves.github.io/portfolio/)** — trajetória desenhada como
+waterfall de trace, pirâmide de confiabilidade interativa, pipeline de observabilidade *hoje × alvo* e
+um caso de automação fiscal anonimizado. O repositório [portfolio](https://github.com/jraalves/portfolio)
+contém o HTML estático e o currículo em duas páginas (pt-BR principal, EN).
+
+## Sobre o que não está aqui
+
+- **Dados de cliente.** O caso de automação fiscal aparece anonimizado: estrutura, arquitetura e
+  método são públicos; nomes, cargas e números internos não são.
+- **Credenciais.** Repositórios antigos continham segredos. O tratamento foi contenção, sanitização
+  de histórico e rotação de credenciais — não `git rm` com fé silenciosa. A ferramenta virou código
+  aberto em [git-secret-guard](https://github.com/jraalves/git-secret-guard).
+- **Métricas de produção.** Números de incidentes reais não são publicados. Onde há percentual
+  (−50% resposta, −70% detecção), ele veio de medição acordada com a área, não de gráfico bonito.
+- Repositórios sob acordo de confidencialidade ficam privados. Preferido isso a expor o ambiente de
+  quem me contratou.
+
+## Princípios que aparecem no código
+
+- Todo alerta precisa de um caminho até um humano que possa agir; se não tem, é ruído.
+- Detecção é produto: a janela de detecção entra na conversa de arquitetura junto com latência.
+- Automação que escreve em produção exige aprovação, idempotência, kill switch e auditoria.
+- Sem denominador, o número é adjetivo. Prefiro `−50% MTTR (medido assim…)` a `ótimo resultado`.
+- Documentar é parte da operação: runbook que ninguém consegue seguir de madrugada não existe.
+
+## Formação e credenciais
+
+- MBA em Arquitetura de Soluções.
+- CertiProf — DevOps Essentials Professional Certificate (DEPC).
+- Em rota: CKA (Kubernetes Administrator) e certificação de plataforma de observabilidade.
+
+## Contato
+
+- LinkedIn: [/in/joaorenatoalves-sre](https://www.linkedin.com/in/joaorenatoalves-sre)
+- Portfólio: [jraalves.github.io/portfolio](https://jraalves.github.io/portfolio/)
+- Aberto a: SRE sênior/tech lead, observabilidade e plataforma em meios de pagamento, fintech e nuvem.
+
+---
+
+## English
+
+**SRE Specialist | Observability | MBA in Solutions Architecture | SRE Certified.**
+High-availability critical systems in payments, banking, telecom and insurance. 17+ years in
+technology, 7+ of them making failure visible before it reaches the customer.
+
+I turn raw signal into a decision: SLI/SLO with an error budget that gates releases, alerts that
+either act or get silenced, automation that deletes toil, and postmortems that change the system
+instead of decorating a runbook. Currently working with Dynatrace/Davis AI, OpenTelemetry,
+Kubernetes/EKS, GitOps and applied AIOps — an internal agent platform that computes MTTR and
+recurrence to support diagnosis and anticipate alerts.
+
+The diagrams above are the method: [`pipeline.svg`](assets/pipeline.svg) closes the delivery loop with
+observability feedback, [`pyramid.svg`](assets/pyramid.svg) shows cost per byte and what each layer
+answers, [`golden.svg`](assets/golden.svg) shows the four signals I check first (p95 of the journey,
+not endpoint average), [`career-trace.svg`](assets/career-trace.svg) plots every role as a span of a
+distributed trace — overlaps and gaps included, because hiding them is the first thing a technical
+recruiter notices.
+
+Client data is published anonymized, production incident figures are not published at all, and leaked
+credentials were contained, rotated and scrubbed from history — the tooling is now open in
+[`git-secret-guard`](https://github.com/jraalves/git-secret-guard).
+
+[Portfolio](https://jraalves.github.io/portfolio/) ·
+[LinkedIn](https://www.linkedin.com/in/joaorenatoalves-sre) ·
+Open to senior SRE, tech lead and platform reliability roles.
+
+<!--SNAKE-->

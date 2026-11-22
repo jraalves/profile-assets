@@ -1,8 +1,8 @@
-<div align="right"><a href="https://jraalves.github.io/portfolio/"><img src="assets/retrato/avatar_rounded.png" width="92" alt="João Renato Alves"/></a></div>
+<div align="right"><a href="https://jraalves.github.io/portfolio/"><img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/retrato/avatar_rounded.png" width="92" alt="João Renato Alves"/></a></div>
 
 # João Renato Alves
 
-<img src="assets/banner.svg" width="100%" alt="Cartão de perfil: Especialista SRE, Observabilidade e AIOps"/>
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/banner.svg" width="100%" alt="Cartão de perfil: Especialista SRE, Observabilidade e AIOps"/>
 
 <p>
   <a href="https://www.linkedin.com/in/joaorenatoalves-sre"><img src="https://img.shields.io/badge/LinkedIn-joaorenatoalves--sre-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
@@ -42,14 +42,14 @@ plataforma, não meu.
 GitOps não é ferramenta, é contrato. O que fecha o loop é a seta tracejada: a métrica decide se a
 entrega deu certo.
 
-<img src="assets/pipeline.svg" width="100%" alt="Pipeline GitOps: Developer, CI, Artifact, CD, Runtime e Observe com feedback de burn rate"/>
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/pipeline.svg" width="100%" alt="Pipeline GitOps: Developer, CI, Artifact, CD, Runtime e Observe com feedback de burn rate"/>
 
 Gate humano fica onde o risco é alto; promoção canário, rollback e postmortem ficam onde a métrica
 já é critério de sucesso. Sem evidência, automação é só velocidade sem direção.
 
 ### 2. Pirâmide de observabilidade: onde cada pergunta é respondida
 
-<img src="assets/pyramid.svg" width="100%" alt="Pirâmide de observabilidade com share de budget por camada"/>
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/pyramid.svg" width="100%" alt="Pirâmide de observabilidade com share de budget por camada"/>
 
 Métrica alerta, trace localiza, log explica, profiling prova. Inverter a base (log em todo lugar,
 métrica tarde demais) é o erro que gera conta alta e resposta lenta — por isso o *share* de budget
@@ -57,7 +57,7 @@ aparece desenhado, não escondido.
 
 ### 3. Os quatro sinais que eu olho primeiro
 
-<img src="assets/golden.svg" width="100%" alt="Golden signals: latência p95, tráfego, erros e saturação"/>
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/golden.svg" width="100%" alt="Golden signals: latência p95, tráfego, erros e saturação"/>
 
 Latência no **p95 da jornada** (não a média do endpoint), tráfego com baseline sazonal por hora,
 erro sempre acompanhado do consumo de budget, saturação antes de o cliente sentir. Se o número não
@@ -68,11 +68,11 @@ gera ação, ele vira dashboard morto — e dashboard morto é *toil* decorativo
 Cada barra é um período real de trabalho, com sobreposições e lacunas visíveis. O gráfico mostra o
 que o CV mostra.
 
-<img src="assets/career-trace.svg" width="100%" alt="Trajetória 2009 a 2026 como waterfall de spans de trace"/>
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/career-trace.svg" width="100%" alt="Trajetória 2009 a 2026 como waterfall de spans de trace"/>
 
 ### 5. Stack agrupada por função
 
-<img src="assets/stack.svg" width="100%" alt="Stack agrupada: observabilidade, nuvem e runtime, CI/CD e IaC, linguagem e dados, SRE e AIOps"/>
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/stack.svg" width="100%" alt="Stack agrupada: observabilidade, nuvem e runtime, CI/CD e IaC, linguagem e dados, SRE e AIOps"/>
 
 A barra sob cada etiqueta é profundidade de uso real, não certificado comprado.
 
@@ -81,7 +81,7 @@ A barra sob cada etiqueta é profundidade de uso real, não certificado comprado
 
 Budget não é clima de time: é conta com duas janelas e quatro estados de portão. O gráfico mostra consumo acumulado no mês; ao lado, o que cada estado proíbe e quem assina.
 
-<img src="assets/error-budget.svg" width="100%" alt="Error budget: conta do SLO, consumo acumulado e os quatro estados do portão de release"/>
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/error-budget.svg" width="100%" alt="Error budget: conta do SLO, consumo acumulado e os quatro estados do portão de release"/>
 
 Release congelado por número tem mais chance de ser respeitado do que por cansaço. E a regra volta à mesa no estado `RECOVERY`, junto com o post-mortem — senão o portão vira punição, não política.
 
@@ -89,7 +89,7 @@ Release congelado por número tem mais chance de ser respeitado do que por cansa
 
 A linha do tempo é o produto. Cada fase tem dono, e a janela `introduced → detected` é a mais barata de encurtar com arquitetura (sacrifício de cardinalidade, regra de arco, SLO de detecção).
 
-<img src="assets/incident-anatomy.svg" width="100%" alt="Timeline de incidente com introduced, detected, acknowledged, mitigated, resolved e learned, mais MTTD, MTTA, MTTM, MTTR e MTTL"/>
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/incident-anatomy.svg" width="100%" alt="Timeline de incidente com introduced, detected, acknowledged, mitigated, resolved e learned, mais MTTD, MTTA, MTTM, MTTR e MTTL"/>
 
 `MTTL` existe no desenho de propósito: se o post-mortem não muda o sistema, o próximo incidente é agendamento, não surpresa. As durações são do `lab-03` com dados sintéticos; os percentuais do CV estão rotulados como tal.
 
@@ -97,7 +97,7 @@ A linha do tempo é o produto. Cada fase tem dono, e a janela `introduced → de
 
 Plataforma interna ligada em observabilidade, tickets, deploy e cluster. O que importa não é o modelo, é a cadeia: correlação, enriquecimento, veredito com confiança, ação com gate humano e medida do resultado.
 
-<img src="assets/aiops-agent.svg" width="100%" alt="Fluxo do agente de AIOps: fontes normalizadas, correlação, enriquecimento, veredito, ação com gate humano e avaliação contra baseline"/>
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/aiops-agent.svg" width="100%" alt="Fluxo do agente de AIOps: fontes normalizadas, correlação, enriquecimento, veredito, ação com gate humano e avaliação contra baseline"/>
 
 No laboratório que reproduz o método, o agente acerta 89,9% de categoria e 76,0% de runbook sobre 79 incidentes sintéticos, contra 32,9% do baseline da classe majoritária. Sem esse baseline, o primeiro número é enfeite.
 
@@ -105,7 +105,7 @@ No laboratório que reproduz o método, o agente acerta 89,9% de categoria e 76,
 
 Projeção com sazonalidade de fechamento, faixa de ±25% na demanda e a data em que a decisão ainda é barata. À direita, o que cada escolha custa e o preço do recurso sem tag.
 
-<img src="assets/capacity-finops.svg" width="100%" alt="Capacity planning com headroom e dia D de esgotamento, três escolhas de escala e painel de FinOps com custo do recurso sem tag"/>
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/capacity-finops.svg" width="100%" alt="Capacity planning com headroom e dia D de esgotamento, três escolhas de escala e painel de FinOps com custo do recurso sem tag"/>
 
 Escalar cedo é decisão de sprint; esperar o dia D é compra sob pressão com overprovision. Autoescala sozinha reage a sintoma e pega o pico de fechamento frio — ela complementa a previsão, não a substitui.
 

@@ -36,6 +36,20 @@ normalmente dentro de README (medido: `200 · image/svg+xml` e `200 · image/png
 da página real). Se algum proxy corporativo bloquear SVG, troque a extensão por `.png` — é o
 mesmo desenho.
 
+
+## Prévia de como isso aparece no perfil
+
+O README de perfil usa estes arquivos por URL absoluta. A captura abaixo foi feita na página
+real do GitHub, com o README definitivo do perfil montado num branch temporário (já apagado):
+
+- [`docs/previa-readme-perfil.png`](docs/previa-readme-perfil.png) — o README inteiro, do retrato
+  ao bloco em inglês.
+- [`docs/previa-topo-perfil.png`](docs/previa-topo-perfil.png) — o topo: retrato, banner, badges
+  e a tabela de séries.
+
+Se você estiver lendo isto no celular, as duas abrem em tela cheia e mostram o tamanho real do
+que vai aparecer em <https://github.com/jraalves>.
+
 ## Reproduzir
 
 Os desenhos são gerados por um script que escreve SVG a partir de dados estruturados (sem

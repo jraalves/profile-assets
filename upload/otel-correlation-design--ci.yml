@@ -1,0 +1,31 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  dashboards-e-codigo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: dashboards validados sem aviso
+        run: python3 dashboards/validate.py --strict --json
+      - name: sintaxe de todo o python do repo
+        run: python3 - <<'EOF'
+import pathlib, ast, sys
+bad = []
+for f in pathlib.Path(".").rglob("*.py"):
+    try:
+        ast.parse(f.read_text(encoding="utf-8"))
+    except SyntaxError as e:
+        bad.append(f"{f}: {e}")
+print(f"{len(list(pathlib.Path('.').rglob('*.py')))} arquivos verificados")
+sys.exit(1 if bad else 0)
+EOF

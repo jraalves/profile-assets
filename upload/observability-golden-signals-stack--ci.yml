@@ -1,0 +1,27 @@
+name: lint
+# Portao do lab de golden signals: valida a configuracao declarativa (o que da para provar
+# sem servico de pé). Os jobs que dependem de Docker/compose ficam fora do CI de proposito:
+# um runner nao precisa de cluster para checar PromQL, dashboards, regras e runbooks.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  declarativo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: dependencias de validacao
+        run: python3 -m pip install --quiet pyyaml yamllint
+      - name: lint (YAML, JSON, PromQL, regras, runbooks, py_compile, bash -n)
+        run: make lint

@@ -1,0 +1,81 @@
+---
+# CI do repositorio de labs: lint, testes e checagem de anonimato.
+# Nada aqui fala com nuvem nem com registry: e Python, YAML e shell.
+name: labs
+
+# yamllint disable-next-line rule:truthy
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: labs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-test:
+    name: lint + testes (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12"]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+
+      - name: dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: sintaxe de todos os .py
+        run: |
+          find . -name '*.py' -not -path './.venv/*' -print0 | xargs -0 -n1 python -m py_compile
+          echo "py_compile ok"
+
+      - name: sintaxe de todos os .sh
+        run: |
+          find . -name '*.sh' -print0 | xargs -0 -n1 bash -n
+          echo "bash -n ok"
+
+      - name: lint de YAML (manifests, workflow, configuracoes)
+        run: bash scripts/lint.sh
+
+      - name: testes dos labs
+        run: pytest -q
+
+      - name: avaliacao do agente de triagem (regressao de acuracia)
+        working-directory: lab-08-aiops-agentes
+        run: python3 evaluate.py --json > /dev/null
+
+      - name: checagem de anonimato (sem dado real no repositorio)
+        run: bash scripts/scan_anonimia.sh
+
+      - name: artefatos gerados pelos labs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: saidas-dos-labs-py${{ matrix.python }}
+          path: |
+            lab-01-sli-slo-error-budget/out
+            lab-03-incidente-e-rca/out
+            lab-06-capacity-planning/out
+            lab-07-finops/out
+            lab-08-aiops-agentes/out
+            lab-09-linux-e-mainframe-correlation/out
+          if-no-files-found: ignore
+          retention-days: 7

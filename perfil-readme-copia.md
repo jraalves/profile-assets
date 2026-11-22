@@ -53,12 +53,13 @@ plataforma, não meu.
 
 | repositório | o que ele faz, com número | stack | o que já foi verificado |
 |---|---|---|---|
+| [fiscal-automation-case](https://github.com/jraalves/fiscal-automation-case) | caso anonimizado de automação fiscal em Kubernetes: a aplicação sob **Ingress** com OAuth2 Proxy, `default-deny` e **dados sintéticos**, host ilustrativo `automacao.github.io` | Kubernetes, Ingress-NGINX, cert-manager, OAuth2 Proxy, Python | `validar_manifests.py`: **8 invariantes**, exit **0** · **200** registros sintéticos determinísticos (seed `20261122`) · varredura de identidade e credencial: **0 ocorrências** |
 | [sre-senior-lab](https://github.com/jraalves/sre-senior-lab) | laboratório de SRE sênior: SLO com error budget, burn rate, capacity/FinOps e um agente de triagem avaliado em **89,9%** de categoria e **76,0%** de runbook contra baseline de **32,9%** (79 incidentes sintéticos) | Python, Prometheus, Grafana, Shell | **238 testes** passando em 1,06 s · `lint.sh` limpo · portão de anonimato sem ocorrência |
 | [observability-golden-signals-stack](https://github.com/jraalves/observability-golden-signals-stack) | stack dos quatro sinais de ouro com correlação de logs, traços e métricas e runbook por família de alerta | Prometheus, Grafana, Loki, Tempo, OTel, Dynatrace | **8** grupos, **60** recording rules, **10** alertas, **4** runbooks, **184** métricas do app validadas |
 | [sre-aiops-agent-reference](https://github.com/jraalves/sre-aiops-agent-reference) | referência de agente de AIOps: correlação, enriquecimento, veredito com confiança e ação sob gate humano | Python, FastAPI, OpenAI-compatível, Jira/ArgoCD/K8s (contratos) | `make check` e `make gate` com exit **0** · **42 testes** |
 | [otel-correlation-design](https://github.com/jraalves/otel-correlation-design) | desenho de correlação de jornada com W3C Trace Context atravessando fronteira sem tracing nativo (Linux ↔ Mainframe) | OpenTelemetry, Java, COBOL, OTLP | validador `--strict`: **0 erros**, **0 avisos** em 3 dashboards |
 | [git-secret-guard](https://github.com/jraalves/git-secret-guard) | hook que barra credencial antes do commit, com sanitização de histórico e varredura de resíduo | Bash, Python, git | **12/12** casos do teste do hook corretos |
-| [profile-assets](https://github.com/jraalves/profile-assets) | os **11** diagramas deste perfil em SVG + PNG 2×, gerados por script a partir de dados | SVG puro, Python, Chromium headless | todos os arquivos respondem `200` sem token · XML válido |
+| [profile-assets](https://github.com/jraalves/profile-assets) | os **12** diagramas deste perfil em SVG + PNG 2×, gerados por script a partir de dados | SVG puro, Python, Chromium headless | todos os arquivos respondem `200` sem token · XML válido |
 | [portfolio](https://github.com/jraalves/portfolio) | site de portfólio em Pages: trajetória como trace, pirâmide interativa e caso de automação fiscal anonimizado, em pt-BR e EN | HTML/CSS/JS estático | publicado em [jraalves.github.io/portfolio](https://jraalves.github.io/portfolio/) |
 
 ## Como eu penso, desenhado
@@ -145,9 +146,17 @@ barata. À direita, o que cada escolha custa e o preço do recurso sem tag.
 Escalar cedo é decisão de sprint; esperar o dia D é compra sob pressão com overprovision.
 Autoescala sozinha reage a sintoma e pega o pico de fechamento frio — ela complementa a previsão,
 não a substitui.
-
 ---
-
+### 10. A porta de entrada de um sistema sensível
+O padrão que eu uso quando uma aplicação toca dado de terceiro e ainda assim precisa ser visitável:
+host de exemplo (`automacao.github.io`), TLS obrigatório com redirect, autenticação delegada no
+**OAuth2 Proxy** antes do app, `NetworkPolicy` *default-deny* no namespace e carga **sintética** no
+lugar do dado real.
+<img src="https://raw.githubusercontent.com/jraalves/profile-assets/main/assets/ingress-gate.svg" width="100%" alt="Ingress como porta de entrada: host de exemplo, TLS, OAuth2 Proxy, NetworkPolicy default-deny e dados sintéticos"/>
+Isso não é enfeite de arquitetura: é o que impede que um painel de auditoria apareça na busca do
+GitHub com sessão aberta. Está reproduzido em manifestos validáveis em
+[fiscal-automation-case](https://github.com/jraalves/fiscal-automation-case).
+---
 ## Cronologia (primeira → última)
 
 | Período | Papel | Onde | Evidência |
@@ -212,8 +221,10 @@ seção em inglês deste README é documentação escrita do trabalho, não prov
 
 ## Sobre o que não está aqui
 
-- **Dados de cliente.** O caso de automação fiscal aparece anonimizado: estrutura, arquitetura e
-  método são públicos; nomes, cargas e números internos não são.
+- **Dados de cliente.** O caso de automação fiscal aparece anonimizado em
+  [fiscal-automation-case](https://github.com/jraalves/fiscal-automation-case): estrutura, arquitetura,
+  portões de CI e método são públicos; nomes, cargas e números internos não são — e não há como
+  reconstruí-los a partir do repositório.
 - **Credenciais.** Repositórios antigos continham segredos. O tratamento foi contenção, sanitização
   de histórico e rotação de credenciais — não `git rm` com fé silenciosa. A ferramenta virou código
   aberto em [git-secret-guard](https://github.com/jraalves/git-secret-guard).
@@ -262,13 +273,21 @@ puts an owner on every phase of the timeline,
 [`aiops-agent.svg`](https://github.com/jraalves/profile-assets/blob/main/assets/aiops-agent.svg)
 shows the evidence chain behind an agent verdict, and
 [`capacity-finops.svg`](https://github.com/jraalves/profile-assets/blob/main/assets/capacity-finops.svg)
-dates the cheap decision.
+dates the cheap decision, and
+[`ingress-gate.svg`](https://github.com/jraalves/profile-assets/blob/main/assets/ingress-gate.svg)
+is the entry pattern I use for anything that touches third-party data: sample host, forced TLS,
+OAuth2 Proxy in front of the app, default-deny `NetworkPolicy` and synthetic payloads instead of
+the client's records.
 
 Repos come with what was actually verified: 238 tests in the SRE lab, an AIOps agent scored at 89.9%
 category accuracy and 76.0% runbook accuracy against a 32.9% majority-class baseline, a strict
 dashboard validator with zero errors and zero warnings, and a secret-scan hook passing 12/12 cases.
-Client data is published anonymized, production incident figures are not published at all, and leaked
-credentials were contained, rotated and scrubbed from history — the tooling is now open in
+The fiscal automation engagement is published as
+[`fiscal-automation-case`](https://github.com/jraalves/fiscal-automation-case): anonymised manifests,
+a deterministic synthetic dataset (seed `20261122`, 200 records) and a validator with 8 invariants that
+exits 0 — the client's name, payloads and internal figures are not in the repository and cannot be
+reconstructed from it. Client data is published anonymized, production incident figures are not
+published at all, and leaked credentials were contained, rotated and scrubbed from history — the tooling is now open in
 [`git-secret-guard`](https://github.com/jraalves/git-secret-guard).
 
 [Portfolio](https://jraalves.github.io/portfolio/) ·

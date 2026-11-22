@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="566" viewBox="0 0 1280 566" role="img" aria-label="Antes: aplicação exposta direto no link. Depois: Ingress com TLS, OAuth2 Proxy, NetworkPolicy e demo com dados sintéticos.">
+<title>Portão de entrada do case de automação</title><desc>Antes: aplicação exposta direto no link. Depois: Ingress com TLS, OAuth2 Proxy, NetworkPolicy e demo com dados sintéticos.</desc>
+<defs>
+<linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#58a6ff" stop-opacity=".18"/><stop offset=".5" stop-color="#bc8cff" stop-opacity=".14"/><stop offset="1" stop-color="#39c5cf" stop-opacity=".18"/></linearGradient>
+<marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#30363d"/></marker>
+</defs>
+<rect width="1280" height="566" rx="14" fill="#0d1117"/>
+<rect x=".5" y=".5" width="1279" height="565" rx="13.5" fill="none" stroke="#30363d"/>
+
+<text x="32.0" y="42.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="700" fill="#e6edf3">Como o case foi fechado sem tirar o valor demonstrativo</text>
+<text x="32.0" y="64.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13" fill="#8b949e">o que virou portfólio foi o desenho e o portao &#183; o ambiente real nunca ficou acessivel por link</text>
+<text x="32.0" y="104.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13" font-weight="700" fill="#f85149">ANTES  &#183;  o que nao pode existir</text>
+<rect x="32" y="116" width="236" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="32" y="116" width="236" height="3" rx="1.5" fill="#f85149"/>
+<text x="44.0" y="142.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13.5" font-weight="700" fill="#f85149">navegador</text>
+<text x="44.0" y="164.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">qualquer pessoa com o link</text>
+<text x="44.0" y="184.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">chega na aplicacao</text>
+<text x="44.0" y="254.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.2" fill="#8b949e">sem autenticacao</text>
+<rect x="292" y="116" width="236" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="292" y="116" width="236" height="3" rx="1.5" fill="#f85149"/>
+<text x="304.0" y="142.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13.5" font-weight="700" fill="#f85149">aplicacao</text>
+<text x="304.0" y="164.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">busca e gestao de</text>
+<text x="304.0" y="184.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">documentos fiscais</text>
+<text x="304.0" y="204.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">de UM cliente</text>
+<text x="304.0" y="254.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.2" fill="#8b949e">dados reais no caminho</text>
+<rect x="552" y="116" width="236" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="552" y="116" width="236" height="3" rx="1.5" fill="#f85149"/>
+<text x="564.0" y="142.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13.5" font-weight="700" fill="#f85149">repositorio</text>
+<text x="564.0" y="164.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">.env publico</text>
+<text x="564.0" y="184.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">historico com a chave</text>
+<text x="564.0" y="204.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">venv versionado</text>
+<text x="564.0" y="254.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.2" fill="#8b949e">quem clonou, tem</text>
+<line x1="268" y1="191" x2="292" y2="191" stroke="#f85149" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="528" y1="191" x2="552" y2="191" stroke="#f85149" stroke-width="1.8" marker-end="url(#arr)"/>
+<text x="32.0" y="300.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13" font-weight="700" fill="#3fb950">DEPOIS  &#183;  o portao que virou padrao</text>
+<rect x="32" y="312" width="200" height="156" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="32" y="312" width="200" height="3" rx="1.5" fill="#58a6ff"/>
+<text x="44.0" y="338.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13.5" font-weight="700" fill="#58a6ff">usuario</text>
+<text x="44.0" y="360.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">sessao com login</text>
+<text x="44.0" y="380.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">corporativo (IdP)</text>
+<text x="44.0" y="456.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.2" fill="#8b949e">nada anonimo</text>
+<rect x="256" y="312" width="200" height="156" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="256" y="312" width="200" height="3" rx="1.5" fill="#3fb950"/>
+<text x="268.0" y="338.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13.5" font-weight="700" fill="#3fb950">Ingress</text>
+<text x="268.0" y="360.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">TLS 1.2+ obrigatorio</text>
+<text x="268.0" y="380.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">host do exemplo:</text>
+<text x="268.0" y="400.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">automacao.github.io</text>
+<text x="268.0" y="456.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.2" fill="#8b949e">annotations no manifest</text>
+<rect x="480" y="312" width="200" height="156" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="480" y="312" width="200" height="3" rx="1.5" fill="#bc8cff"/>
+<text x="492.0" y="338.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13.5" font-weight="700" fill="#bc8cff">OAuth2 Proxy</text>
+<text x="492.0" y="360.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">gate antes do app</text>
+<text x="492.0" y="380.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">allow-list de grupo</text>
+<text x="492.0" y="400.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">auditoria de acesso</text>
+<text x="492.0" y="456.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.2" fill="#8b949e">401 sem tocar o backend</text>
+<rect x="704" y="312" width="200" height="156" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="704" y="312" width="200" height="3" rx="1.5" fill="#39c5cf"/>
+<text x="716.0" y="338.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13.5" font-weight="700" fill="#39c5cf">Service / Pod</text>
+<text x="716.0" y="360.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">app nao escuta</text>
+<text x="716.0" y="380.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">nada alem do cluster</text>
+<text x="716.0" y="400.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">read-only no storage</text>
+<text x="716.0" y="456.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.2" fill="#8b949e">ClusterIP, nunca NodePort</text>
+<rect x="928" y="312" width="320" height="156" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="928" y="312" width="320" height="3" rx="1.5" fill="#d29922"/>
+<text x="940.0" y="338.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13.5" font-weight="700" fill="#d29922">dados da demo</text>
+<text x="940.0" y="360.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">200 documentos</text>
+<text x="940.0" y="380.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">sinteticos, gerados por</text>
+<text x="940.0" y="400.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">script versionado</text>
+<text x="940.0" y="420.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.4" fill="#e6edf3">nenhum dado de cliente</text>
+<text x="940.0" y="456.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.2" fill="#8b949e">mesmo fluxo, dado falso</text>
+<line x1="232" y1="390" x2="256" y2="390" stroke="#3fb950" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="456" y1="390" x2="480" y2="390" stroke="#3fb950" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="680" y1="390" x2="704" y2="390" stroke="#3fb950" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="904" y1="390" x2="928" y2="390" stroke="#3fb950" stroke-width="1.8" marker-end="url(#arr)"/>
+<rect x="32" y="466" width="1216" height="66" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="48.0" y="490.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="12.6" fill="#8b949e">NetworkPolicy: o namespace nega todo egress/ingress que nao esteja listado &#183; Secret montado como volume, nunca como .env no Git &#183; os numeros desta</text>
+<text x="48.0" y="510.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="12.6" fill="#8b949e">pagina vem de ambiente de laboratorio &#183; a URL ilustrativa nao aponta para ambiente de cliente, que nao tem endpoint na internet</text>
+</svg>

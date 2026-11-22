@@ -76,6 +76,39 @@ que o CV mostra.
 
 A barra sob cada etiqueta é profundidade de uso real, não certificado comprado.
 
+
+### 6. Error budget como política de release
+
+Budget não é clima de time: é conta com duas janelas e quatro estados de portão. O gráfico mostra consumo acumulado no mês; ao lado, o que cada estado proíbe e quem assina.
+
+<img src="assets/error-budget.svg" width="100%" alt="Error budget: conta do SLO, consumo acumulado e os quatro estados do portão de release"/>
+
+Release congelado por número tem mais chance de ser respeitado do que por cansaço. E a regra volta à mesa no estado `RECOVERY`, junto com o post-mortem — senão o portão vira punição, não política.
+
+### 7. Anatomia de um incidente
+
+A linha do tempo é o produto. Cada fase tem dono, e a janela `introduced → detected` é a mais barata de encurtar com arquitetura (sacrifício de cardinalidade, regra de arco, SLO de detecção).
+
+<img src="assets/incident-anatomy.svg" width="100%" alt="Timeline de incidente com introduced, detected, acknowledged, mitigated, resolved e learned, mais MTTD, MTTA, MTTM, MTTR e MTTL"/>
+
+`MTTL` existe no desenho de propósito: se o post-mortem não muda o sistema, o próximo incidente é agendamento, não surpresa. As durações são do `lab-03` com dados sintéticos; os percentuais do CV estão rotulados como tal.
+
+### 8. Agente de AIOps com veredito por evidência
+
+Plataforma interna ligada em observabilidade, tickets, deploy e cluster. O que importa não é o modelo, é a cadeia: correlação, enriquecimento, veredito com confiança, ação com gate humano e medida do resultado.
+
+<img src="assets/aiops-agent.svg" width="100%" alt="Fluxo do agente de AIOps: fontes normalizadas, correlação, enriquecimento, veredito, ação com gate humano e avaliação contra baseline"/>
+
+No laboratório que reproduz o método, o agente acerta 89,9% de categoria e 76,0% de runbook sobre 79 incidentes sintéticos, contra 32,9% do baseline da classe majoritária. Sem esse baseline, o primeiro número é enfeite.
+
+### 9. Capacidade e FinOps na mesma reunião
+
+Projeção com sazonalidade de fechamento, faixa de ±25% na demanda e a data em que a decisão ainda é barata. À direita, o que cada escolha custa e o preço do recurso sem tag.
+
+<img src="assets/capacity-finops.svg" width="100%" alt="Capacity planning com headroom e dia D de esgotamento, três escolhas de escala e painel de FinOps com custo do recurso sem tag"/>
+
+Escalar cedo é decisão de sprint; esperar o dia D é compra sob pressão com overprovision. Autoescala sozinha reage a sintoma e pega o pico de fechamento frio — ela complementa a previsão, não a substitui.
+
 ---
 
 ## Cronologia (primeira → última)
@@ -173,6 +206,8 @@ answers, [`golden.svg`](assets/golden.svg) shows the four signals I check first 
 not endpoint average), [`career-trace.svg`](assets/career-trace.svg) plots every role as a span of a
 distributed trace — overlaps and gaps included, because hiding them is the first thing a technical
 recruiter notices.
+
+Six more diagrams are the same argument: `error-budget.svg` turns the budget into a four-state release gate, `incident-anatomy.svg` puts an owner on every phase of the timeline, `aiops-agent.svg` shows the evidence chain behind an agent verdict, and `capacity-finops.svg` dates the cheap decision. Each one states its denominator.
 
 Client data is published anonymized, production incident figures are not published at all, and leaked
 credentials were contained, rotated and scrubbed from history — the tooling is now open in

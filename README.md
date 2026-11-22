@@ -18,6 +18,10 @@ denominador está descrito no README de cada repositório.
 | `golden.svg` / `.png` | Os quatro sinais que eu olho primeiro (p95 de jornada, tráfego com baseline, erro vs. budget, saturação vs. P90) | todo alerta precisa de caminho até um humano que possa agir |
 | `career-trace.svg` / `.png` | Carreira desenhada como trace distribuído: um span por período, sobreposições e lacunas visíveis | esconder sobreposição e buraco é a primeira coisa que um recrutador técnico percebe |
 | `stack.svg` / `.png` | Stack agrupada por função, com barra de profundidade real de uso | ordem = onde passei mais tempo; profundidade ≠ certificado comprado |
+| `error-budget.svg` / `.png` | Error budget como política: a conta do SLO, o consumo acumulado do mês e os quatro estados do portão de release | release congelado por número tem mais chance de ser respeitado do que por cansaço |
+| `incident-anatomy.svg` / `.png` | Timeline `introduced → detected → acknowledged → mitigated → resolved → learned` com dono por fase e MTTD/MTTA/MTTM/MTTR/MTTL | a janela de detecção é produto de arquitetura, não esforço de plantão |
+| `aiops-agent.svg` / `.png` | Cadeia do agente de AIOps: fontes normalizadas, correlação, enriquecimento, veredito com confiança, ação com gate humano e avaliação contra baseline | sem baseline, "89,9% de acurácia" é enfeite |
+| `capacity-finops.svg` / `.png` | Projeção de demanda com headroom, dia D de esgotamento em faixa de ±25%, custo de cada escolha e o preço do recurso sem tag | a decisão barata tem data |
 | `retrato/avatar_rounded.png` | Retrato sobre fundo de tecnologia | identidade visual do perfil |
 
 ## Como referenciar num README

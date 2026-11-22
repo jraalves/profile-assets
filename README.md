@@ -22,6 +22,7 @@ denominador está descrito no README de cada repositório.
 | `incident-anatomy.svg` / `.png` | Timeline `introduced → detected → acknowledged → mitigated → resolved → learned` com dono por fase e MTTD/MTTA/MTTM/MTTR/MTTL | a janela de detecção é produto de arquitetura, não esforço de plantão |
 | `aiops-agent.svg` / `.png` | Cadeia do agente de AIOps: fontes normalizadas, correlação, enriquecimento, veredito com confiança, ação com gate humano e avaliação contra baseline | sem baseline, "89,9% de acurácia" é enfeite |
 | `capacity-finops.svg` / `.png` | Projeção de demanda com headroom, dia D de esgotamento em faixa de ±25%, custo de cada escolha e o preço do recurso sem tag | a decisão barata tem data |
+| `readme-trilha.svg` / `.png` | Trilha de leitura em tres camadas de tempo (20 s, 2 min, 15 min) com a conclusao que cada uma entrega | perfil legivel por quem tem 20 segundos e por quem tem 15 minutos |
 | `retrato/avatar_rounded.png` | Retrato sobre fundo de tecnologia | identidade visual do perfil |
 
 ## Como referenciar num README

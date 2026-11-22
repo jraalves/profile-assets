@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="512" viewBox="0 0 1280 512" role="img" aria-label="O que olhar em 20 segundos, em 2 minutos e em 15 minutos, com a conclusao esperada de cada parada.">
+<title>Trilha de leitura do perfil</title><desc>O que olhar em 20 segundos, em 2 minutos e em 15 minutos, com a conclusao esperada de cada parada.</desc>
+<defs>
+<linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#58a6ff" stop-opacity=".18"/><stop offset=".5" stop-color="#bc8cff" stop-opacity=".14"/><stop offset="1" stop-color="#39c5cf" stop-opacity=".18"/></linearGradient>
+<marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#30363d"/></marker>
+</defs>
+<rect width="1280" height="512" rx="14" fill="#0d1117"/>
+<rect x=".5" y=".5" width="1279" height="511" rx="13.5" fill="none" stroke="#30363d"/>
+
+<text x="32.0" y="44.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="700" fill="#e6edf3">Trilha de leitura: o perfil funciona como um runbook</text>
+<text x="32.0" y="67.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13" fill="#8b949e">ninguém espera que um recrutador leia 20 KB &#183; cada camada tem uma conclusao explicita, nao um adjetivo</text>
+<rect x="32" y="96" width="394" height="300" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="32" y="96" width="394" height="4" rx="2" fill="#58a6ff"/>
+<text x="46.0" y="130.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="14.5" font-weight="700" fill="#58a6ff">20 segundos  &#183;  nesta pagina</text>
+<text x="46.0" y="158.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="16.5" font-weight="700" fill="#e6edf3">Decidir se vale a conversa</text>
+<circle cx="51" cy="184" r="2.6" fill="#58a6ff"/>
+<text x="62.0" y="188.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.8" fill="#8b949e">banner e etiquetas de stack por funcao</text>
+<circle cx="51" cy="211" r="2.6" fill="#58a6ff"/>
+<text x="62.0" y="215.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.8" fill="#8b949e">linha de posicionamento acima da dobra</text>
+<circle cx="51" cy="238" r="2.6" fill="#58a6ff"/>
+<text x="62.0" y="242.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.8" fill="#8b949e">tabela de séries com denominador</text>
+<line x1="46" y1="304" x2="412" y2="304" stroke="#30363d"/>
+<text x="46.0" y="326.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.5" font-weight="700" fill="#58a6ff">O QUE VOCÊ CONCLUI</text>
+<text x="46.0" y="348.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#e6edf3">especialidade: SRE e observabilidade em meios de</text>
+<text x="46.0" y="368.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#e6edf3">pagamento, 17+ anos</text>
+<rect x="449" y="96" width="394" height="300" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="449" y="96" width="394" height="4" rx="2" fill="#3fb950"/>
+<text x="463.0" y="130.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="14.5" font-weight="700" fill="#3fb950">2 minutos  &#183;  seções desenhadas</text>
+<text x="463.0" y="158.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="16.5" font-weight="700" fill="#e6edf3">Conferir método, nao ferramenta</text>
+<circle cx="468" cy="184" r="2.6" fill="#3fb950"/>
+<text x="479.0" y="188.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.8" fill="#8b949e">pipeline do commit ao signal com o loop fechado</text>
+<circle cx="468" cy="211" r="2.6" fill="#3fb950"/>
+<text x="479.0" y="215.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.8" fill="#8b949e">error budget como portão de release em 4 estados</text>
+<circle cx="468" cy="238" r="2.6" fill="#3fb950"/>
+<text x="479.0" y="242.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.8" fill="#8b949e">anatomia de incidente com dono por fase</text>
+<line x1="463" y1="304" x2="829" y2="304" stroke="#30363d"/>
+<text x="463.0" y="326.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.5" font-weight="700" fill="#3fb950">O QUE VOCÊ CONCLUI</text>
+<text x="463.0" y="348.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#e6edf3">ha critério de arquitetura atras de cada métrica</text>
+<text x="463.0" y="368.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#e6edf3">que eu público</text>
+<rect x="866" y="96" width="394" height="300" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<rect x="866" y="96" width="394" height="4" rx="2" fill="#bc8cff"/>
+<text x="880.0" y="130.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="14.5" font-weight="700" fill="#bc8cff">15 minutos  &#183;  repositorios</text>
+<text x="880.0" y="158.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="16.5" font-weight="700" fill="#e6edf3">Ver o código rodar</text>
+<circle cx="885" cy="184" r="2.6" fill="#bc8cff"/>
+<text x="896.0" y="188.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.8" fill="#8b949e">labs com 238 testes e portão de anonimato no CI</text>
+<circle cx="885" cy="211" r="2.6" fill="#bc8cff"/>
+<text x="896.0" y="215.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.8" fill="#8b949e">agente de AIOps medido contra baseline de 32,9%</text>
+<circle cx="885" cy="238" r="2.6" fill="#bc8cff"/>
+<text x="896.0" y="242.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="12.8" fill="#8b949e">runbook, RCA e correlação OpenTelemetry escritos</text>
+<line x1="880" y1="304" x2="1246" y2="304" stroke="#30363d"/>
+<text x="880.0" y="326.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11.5" font-weight="700" fill="#bc8cff">O QUE VOCÊ CONCLUI</text>
+<text x="880.0" y="348.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#e6edf3">entregável executável, documentado e reproduzível</text>
+<text x="880.0" y="368.0" font-family="-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#e6edf3">por outra pessoa</text>
+<line x1="428" y1="246.0" x2="447" y2="246.0" stroke="#30363d" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="845" y1="246.0" x2="864" y2="246.0" stroke="#30363d" stroke-width="1.8" marker-end="url(#arr)"/>
+<rect x="32" y="420" width="1216" height="84" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="48.0" y="447.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13" font-weight="700" fill="#d29922">o que nao esta aqui: dado de cliente, volume de transação, SLA contratual e numero de incidente real</text>
+<text x="48.0" y="471.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="12.6" fill="#8b949e">o que era confidencial continua privado; o que e público esta documentado com teste, portão de CI e denominador &#183; a contenção das credenciais que</text>
+<text x="48.0" y="490.0" font-family="'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="12.6" fill="#8b949e">vazaram virou ferramenta aberta</text>
+</svg>

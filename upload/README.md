@@ -49,6 +49,44 @@ Números relativos têm denominador descrito no README de cada repositório. Nã
 transações, SLA contratual ou resultado financeiro de cliente: isso é dado de quem pagou pela
 plataforma, não meu.
 
+## Painel ao vivo
+
+Cada imagem abaixo é **gerada no momento em que a página é aberta**: nada aqui é número decorativo.
+Fontes: API pública do GitHub, `github-readme-stats`, `github-readme-streak-stats`, `shields.io`
+(dynamic JSON) e `skillicons.dev`. Repositórios privados não entram em nenhuma contagem.
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=jraalves&show_icons=true&count_private=false&theme=transparent&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=39c5cf&text_color=c9d1d9&rank_icon=github" alt="Cartão de atividade pública no GitHub" height="170"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=jraalves&theme=transparent&hide_border=true&background=0d1117&border=30363d&stroke=3fb950&ring=58a6ff&fire=d29922&currStreakLabel=58a6ff&sideLabels=c9d1d9&dates=8b949e" alt="Sequência de contribuições" height="170"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jraalves&layout=compact&theme=transparent&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&card_width=460" alt="Linguagens mais usadas nos repositórios públicos" height="130"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fjraalves&query=%24.public_repos&label=repos%20publicos&color=58a6ff&logo=git&logoColor=white&style=flat-square" alt="Repositórios públicos"/>
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub-contributions-api.jogruber.de%2Fv4%2Fjraalves%3Fy%3Dlast&query=%24.total.lastYear&label=contribuidos%20em%2012m&color=3fb950&logo=github&logoColor=white&style=flat-square" alt="Contribuições nos últimos 12 meses"/>
+  <img src="https://img.shields.io/github/stars/jraalves/fiscal-automation-case?style=flat-square&logo=github&label=estrelas%20no%20case&color=d29922" alt="Estrelas no case anonimizado"/>
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fjraalves.github.io%2Fportfolio%2F&style=flat-square&label=portf%C3%B3lio%20no%20ar&color=39c5cf&up_message=200&down_color=f85149" alt="Portfólio no ar"/>
+  <img src="https://img.shields.io/badge/CI%20local-make%20ci%20exit%200-3fb950?style=flat-square&logo=githubactions&logoColor=white" alt="CI local do case"/>
+</p>
+
+### Stack, por família
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=linux,py,bash,aws,k8s,docker,terraform,ansible,git,gitlab,githubactions,prometheus,grafana,postgres,mongo,redis,ai,vim" alt="Grade de tecnologias: Linux, Python, Bash, AWS, Kubernetes, Docker, Terraform, Ansible, Git, GitLab, GitHub Actions, Prometheus, Grafana, PostgreSQL, MongoDB, Redis, IA, Vim"/>
+</p>
+
+<p align="center">
+  <img src="https://cdn.simpleicons.org/dynatrace/58a6ff" width="34" height="34" alt="Dynatrace"/>
+  <img src="https://cdn.simpleicons.org/opentelemetry/58a6ff" width="34" height="34" alt="OpenTelemetry"/>
+  <img src="https://cdn.simpleicons.org/argo/58a6ff" width="34" height="34" alt="ArgoCD"/>
+  <img src="https://cdn.simpleicons.org/elastic/58a6ff" width="34" height="34" alt="Elastic"/>
+</p>
+
+---
+
 ## Repositórios em destaque
 
 | repositório | o que ele faz, com número | stack | o que já foi verificado |

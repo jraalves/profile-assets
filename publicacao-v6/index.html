@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>João Renato Alves — Especialista SRE | Observabilidade | DevOps | GitOps | FinOps | AIOps</title>
+<meta name="description" content="Portfólio de João Renato Alves, Especialista SRE e Observabilidade em São Paulo: trilhas SRE, Observabilidade, DevOps, GitOps, FinOps e AIOps, pirâmide de confiabilidade, projetos públicos e trajetória 2013–2026.">
+<meta name="author" content="João Renato Alves">
+<meta name="color-scheme" content="dark light">
+<!--
+  Página estática auto-contida: CSS e JS embutidos, nenhuma imagem externa,
+  nenhuma fonte externa, nenhum script externo.
+  Espinha dorsal reproduzida do modelo Next.js (pages/index.tsx):
+  header -> Summary -> Highlights -> Projects -> Papel do SRE (com pirâmide) -> Currículo -> footer.
+  Adaptação: entram Trilhas (6), Pirâmide de 9 camadas, Trajetória, Formação e English summary.
+-->
+<style>
+  :root{
+    --bg:#0b0f16;
+    --bg-soft:#111827;
+    --card:#141b28;
+    --card-2:#18213040;
+    --border:#25314a;
+    --text:#e8eefc;
+    --muted:#94a3b8;
+    --accent:#6ec1ff;          /* cor de destaque do modelo */
+    --blue:#007BFF;            /* BLUE_COLOR da pirâmide original */
+    --hl:#FFC107;              /* HIGHLIGHT_COLOR da pirâmide original */
+    --gray:#6C757D;            /* DEFAULT_COLOR da pirâmide original */
+    --radius:12px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+    line-height:1.65;
+    font-size:16.5px;
+    -webkit-text-size-adjust:100%;
+  }
+  .container{max-width:var(--maxw);margin:0 auto;padding:24px 20px 56px}
+
+  /* ---------- acessibilidade ---------- */
+  .skip-link{
+    position:absolute;left:-9999px;top:0;z-index:100;
+    background:var(--accent);color:#04101f;font-weight:700;
+    padding:10px 16px;border-radius:0 0 10px 0;text-decoration:none;
+  }
+  .skip-link:focus{left:0;top:0}
+  a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover,a:focus{color:#a8dcff}
+  :focus-visible{
+    outline:3px solid var(--hl);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+  h1,h2,h3,h4{line-height:1.25;margin:0 0 .5em;letter-spacing:-.01em}
+  h1{font-size:clamp(1.9rem,4.4vw,2.7rem);color:var(--accent)}
+  h2{font-size:clamp(1.25rem,2.6vw,1.55rem);color:var(--accent)}
+  h3{font-size:1.05rem;color:#dbeafe}
+  p{margin:0 0 .9em}
+  ul{margin:.2em 0 .9em;padding-left:1.2em}
+  li{margin:.28em 0}
+  small,.small{font-size:.86rem}
+  .muted{color:var(--muted)}
+  .lead{font-size:1.06rem}
+  .nowrap{white-space:nowrap}
+
+  /* ---------- navegação ---------- */
+  .topnav{
+    position:sticky;top:0;z-index:20;
+    background:#0b0f16f2;border-bottom:1px solid var(--border);
+    backdrop-filter:saturate(150%) blur(6px);
+  }
+  .topnav .container{padding-top:10px;padding-bottom:10px}
+  .topnav ul{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+  .topnav a{
+    display:inline-block;padding:5px 10px;border-radius:999px;
+    border:1px solid var(--border);color:#cfe4ff;text-decoration:none;font-size:.85rem;
+  }
+  .topnav a:hover,.topnav a[aria-current="true"]{border-color:var(--accent);color:var(--accent)}
+
+  /* ---------- cards (estilo do modelo) ---------- */
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:22px 24px;margin-top:22px;
+  }
+  .card > :last-child{margin-bottom:0}
+  .header-card{
+    background:linear-gradient(135deg,#13203a 0%,#0e1522 60%);
+    border:1px solid #2b3c5c;border-radius:var(--radius);
+    padding:26px 24px;margin-top:22px;
+  }
+  .header-row{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:flex-start}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin:.4em 0 0}
+  .badge{
+    display:inline-block;font-size:.78rem;font-weight:600;
+    border:1px solid #2f4767;background:#101a2b;color:#cfe4ff;
+    padding:3px 9px;border-radius:999px;
+  }
+  .badge.hl{border-color:#6b5200;background:#2a2103;color:var(--hl)}
+  .header-links{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+  .btn{
+    display:inline-block;padding:9px 14px;border-radius:9px;
+    border:1px solid var(--accent);background:#0f2038;color:var(--accent);
+    font-weight:650;text-decoration:none;font-size:.9rem;
+  }
+  .btn:hover{background:var(--accent);color:#04101f}
+  .btn.ghost{border-color:var(--border);color:#cfe4ff;background:transparent}
+
+  /* ---------- trilhas ---------- */
+  .grid{display:grid;gap:16px}
+  .tracks{grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+  .track{
+    background:var(--card-2);border:1px solid var(--border);border-radius:10px;
+    padding:16px 17px;display:flex;flex-direction:column;gap:10px;
+  }
+  .track h3{display:flex;align-items:center;gap:9px;margin:0;font-size:1.12rem;color:var(--accent)}
+  .track .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;flex:0 0 26px;border-radius:7px;
+    background:#0f2038;border:1px solid #2f4767;color:var(--accent);
+    font-size:.82rem;font-weight:800;
+  }
+  .track p{margin:0}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+  .chips li{margin:0;font-size:.76rem;border:1px solid #2b3c5c;background:#0e1728;color:#bcd6f5;border-radius:6px;padding:2px 7px}
+  .proof{
+    border-left:3px solid var(--hl);background:#1a1c13;padding:8px 11px;border-radius:0 8px 8px 0;
+    font-size:.9rem;color:#f5e6bd;
+  }
+  .proof strong{color:var(--hl)}
+
+  /* ---------- pirâmide ---------- */
+  .pyr-wrap{display:grid;gap:20px;grid-template-columns:minmax(280px,420px) 1fr;align-items:start}
+  .pyramid{
+    display:flex;flex-direction:column;align-items:center;width:100%;max-width:420px;
+    margin:6px auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;padding:10px 8px;
+    background:#101828;
+  }
+  .pyr-layer{
+    display:block;width:100%;margin:0 0 -1px;padding:9px 6px;
+    border:1px solid #0b1220;border-radius:0;font:inherit;font-weight:700;font-size:.78rem;
+    text-align:center;cursor:pointer;color:#fff;
+    /* herança do modelo: texto preto sobre laranja de destaque */
+  }
+  .pyr-layer[data-color="hl"]{color:#000;box-shadow:0 0 10px rgba(255,193,7,.45)}
+  /* AA: sobre o azul original #007BFF, texto branco dá 3,98:1; quase-preto dá 4,71:1.
+     O cinza original #6C757D com branco já passa (4,69:1). Cor de fundo preservada. */
+  .pyr-layer[data-color="blue"]{color:#0b1220}
+  .pyr-layer.is-top{clip-path:polygon(0% 0%,100% 0%,85% 100%,15% 100%);padding-top:16px}
+  .pyr-layer.is-base{border-bottom-left-radius:8px;border-bottom-right-radius:8px}
+  .pyr-layer[aria-pressed="true"]{outline:3px solid var(--accent);outline-offset:-3px}
+  .pyr-detail{border:1px solid var(--border);border-radius:10px;background:var(--card-2);padding:14px 16px}
+  .pyr-detail h4{margin:0 0 6px;color:var(--accent);font-size:1rem}
+  .pyr-detail .why{color:var(--hl);font-weight:650;font-size:.9rem;margin:8px 0 0}
+  .legend{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 0;font-size:.82rem;color:var(--muted)}
+  .legend i{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:1px solid #0b1220}
+  ol.layers-list{padding-left:1.3em}
+  ol.layers-list li{margin:.45em 0}
+  ol.layers-list b{color:#dbeafe}
+
+  /* ---------- projetos ---------- */
+  .projects{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+  .projects li{margin:0;border:1px solid var(--border);border-radius:10px;padding:13px 15px;background:var(--card-2)}
+  .projects .meta{color:var(--muted);font-size:.86rem;margin-top:3px}
+  .confidencial{border-left:3px solid var(--accent)}
+
+  /* ---------- trajetória ---------- */
+  .timeline{list-style:none;margin:0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:#243452}
+  .tl-item{position:relative;padding:0 0 16px 30px;margin:0}
+  .tl-item::before{
+    content:"";position:absolute;left:3px;top:7px;width:14px;height:14px;border-radius:50%;
+    background:#0f2038;border:2px solid var(--accent);
+  }
+  .tl-item.now::before{background:var(--hl);border-color:var(--hl)}
+  .tl-head{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+  .tl-period{font-size:.8rem;font-weight:800;color:var(--hl);letter-spacing:.02em}
+  .tl-role{font-weight:700;color:#e8eefc}
+  .tl-org{color:var(--accent);font-weight:600;font-size:.92rem}
+  .tl-note{font-size:.9rem;color:var(--muted);margin:2px 0 6px}
+  .tl-tags{display:flex;flex-wrap:wrap;gap:5px;list-style:none;padding:0;margin:0}
+  .tl-tags li{font-size:.7rem;border:1px solid #2b3c5c;border-radius:5px;padding:1px 6px;color:#a9c8ef;margin:0}
+
+  /* ---------- formação / grid ---------- */
+  .cols{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+
+  /* ---------- bloco inglês ---------- */
+  .en{background:#101a2b;border:1px solid #26405f}
+  .en h2{color:#a8dcff}
+  .en .row{display:grid;gap:6px 18px;grid-template-columns:170px 1fr;margin:.5em 0}
+  .en .row dt{color:var(--hl);font-weight:700;font-size:.86rem}
+  .en .row dd{margin:0;font-size:.94rem}
+
+  footer.site{margin-top:26px;color:var(--muted);font-size:.88rem;border-top:1px solid var(--border);padding-top:16px}
+  hr.sep{border:0;border-top:1px solid var(--border);margin:18px 0}
+
+  /* ---------- responsivo ---------- */
+  @media (max-width:900px){
+    .pyr-wrap{grid-template-columns:1fr}
+    .en .row{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    .card,.header-card{padding:18px 16px}
+    .header-row{flex-direction:column}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation:none!important;transition:none!important}
+  }
+
+  /* ---------- impressão A4 ---------- */
+  @page{size:A4;margin:14mm}
+  @media print{
+    :root{--bg:#fff;--card:#fff;--card-2:#fff;--text:#111820;--muted:#42506a;--border:#b9c6dc;--accent:#0a5aa8}
+    html,body{background:#fff;color:#111820;font-size:10.4pt;line-height:1.5}
+    .container{max-width:none;padding:0}
+    .topnav,.skip-link,.no-print{display:none!important}
+    .card,.header-card{border:1px solid #b9c6dc;background:#fff;color:#111820;margin-top:10px;padding:12px 14px;
+      -webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .header-card{background:#fff}
+    /* quebrar entre cartões, nunca dentro de unidade mínima de leitura */
+    .track,.projects li,.confidencial,.tl-item,.pyramid,.pyr-detail,.legend,
+    .grid.cols > div,.en .row{break-inside:avoid;page-break-inside:avoid}
+    h1,h2,h3,h4,.layers-list > li{break-after:avoid;page-break-after:avoid}
+    #piramide,#projetos,#papel-sre,#english,#curriculo,#contato{break-before:auto}
+    h1,h2{color:#0a5aa8}
+    h3{color:#111820}
+    h2{font-size:13pt}
+    ol.layers-list b,.tl-role{color:#111820}
+    .track,.projects li,.pyr-detail,.chips li,.badge,.tl-tags li{border-color:#b9c6dc;background:#f7faff;color:#111820}
+    .badge.hl{background:#fff2cc;color:#7a5b00;border-color:#c78f00}
+    .btn,.btn.ghost{background:#eef4fc;color:#0a5aa8;border-color:#7f9dc6;font-weight:700}
+    .btn:hover{background:#dce9fa;color:#0a5aa8}
+    .proof{background:#fff6dc;color:#3f2d00;border-left-color:#c78f00}
+    .proof strong{color:#8a6100}
+    .pyramid{background:#fff;border-color:#b9c6dc}
+    .pyr-layer{border-color:#7f8797;box-shadow:none!important;font-size:7.6pt}
+    .pyr-layer[aria-pressed="true"]{outline:1px solid #7f8797}
+    .en{background:#fff}
+    .timeline::before{background:#b9c6dc}
+    .tl-period{color:#7a5b00}
+    .tl-role,.tl-org{color:#111820}
+    .tl-note{color:#42506a}
+    a{color:#0a5aa8;text-decoration:underline}
+    main a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;color:#42506a;word-break:break-all}
+    .skip-marker{break-before:page;page-break-before:always}
+  }
+</style>
+<!-- v5 24/11/2026: datas alinhadas ao CV (13+ mercado desde jan/2013, 7+ SRE desde set/2019), botões de evidência no topo, sem repos obsoletos -->
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+<nav class="topnav" aria-label="Navegação do portfólio">
+  <div class="container">
+    <ul>
+      <li><a href="#resumo">Summary</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#trilhas">Trilhas</a></li>
+      <li><a href="#piramide">Pirâmide</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#papel-sre">Papel do SRE</a></li>
+      <li><a href="#trajetoria">Trajetória</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#english">English</a></li>
+      <li><a href="#curriculo">Currículo</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="conteudo" class="container">
+
+  <!-- ============ HEADER (modelo: nome, role, localização, GitHub) ============ -->
+  <header class="header-card" aria-labelledby="h-nome">
+    <div class="header-row">
+      <div>
+        <h1 id="h-nome">João Renato Alves</h1>
+        <p class="lead">Especialista SRE &amp; Observabilidade — DevOps · GitOps · FinOps · AIOps — São Paulo, SP</p>
+        <div class="badges">
+          <span class="badge">Dynatrace · Davis AI</span>
+          <span class="badge">Correlation ID Linux ↔ Mainframe</span>
+          <span class="badge">SLI · SLO · Error Budget</span>
+          <span class="badge">AWS · Kubernetes (EKS)</span>
+          <span class="badge">GitOps · ArgoCD · Terraform</span>
+          <span class="badge hl">AIOps com agentes de IA</span>
+        </div>
+        <p class="small muted" style="margin-top:12px">
+          Meios de pagamento, telecom e serviços financeiros. Trajetória de suporte a aplicações,
+          infraestrutura e middleware até SRE, capacity planning e AIOps.
+        </p>
+      </div>
+      <div class="header-links">
+        <a class="btn" href="https://github.com/jraalves" rel="noreferrer" target="_blank">GitHub · jraalves</a>
+        <a class="btn" href="#projetos" rel="noreferrer">Portfólio · evidências</a>
+        <a class="btn ghost" href="https://jraalves.github.io/portfolio/" rel="noreferrer" target="_blank">Este portfólio no ar</a>
+        <a class="btn ghost" href="cv.pdf" target="_blank" rel="noreferrer">Currículo (PDF, PT+EN)</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/joaorenatoalves-sre" rel="noreferrer" target="_blank">LinkedIn</a>
+      </div>
+      <div class="header-links" style="margin-top:10px">
+        <a class="btn ghost" href="https://github.com/jraalves/fiscal-automation-case" rel="noreferrer" target="_blank" title="Case de automação anonimizado">Case · automação fiscal</a>
+        <a class="btn" href="https://jraalves.github.io/automacao/" rel="noreferrer" target="_blank" title="Demonstração funcional com dados sintéticos">Demo · automação fiscal</a>
+        <a class="btn ghost" href="https://github.com/jraalves/observability-golden-signals-stack" rel="noreferrer" target="_blank" title="Prometheus, Grafana, Loki, Tempo, OpenTelemetry">Stack · golden signals</a>
+        <a class="btn ghost" href="https://github.com/jraalves/sre-senior-lab" rel="noreferrer" target="_blank" title="7 laboratórios com dados sintéticos">Lab · SRE sênior</a>
+        <a class="btn ghost" href="https://github.com/jraalves/otel-correlation-design" rel="noreferrer" target="_blank" title="Correlação por trace_id e X-Request-Id">Design · correlação OTel</a>
+        <a class="btn ghost" href="https://github.com/jraalves/sre-aiops-agent-reference" rel="noreferrer" target="_blank" title="Agentes de IA para triagem e runbook">AIOps · agentes</a>
+        <a class="btn ghost" href="https://github.com/jraalves/git-secret-guard" rel="noreferrer" target="_blank" title="Hook que bloqueia segredo antes do commit">Segurança · secret guard</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ SUMMARY ============ -->
+  <section class="card" aria-labelledby="h-resumo" id="resumo">
+    <h2 id="h-resumo">Summary</h2>
+    <p class="lead">
+      Sou SRE com 13+ anos de mercado (desde janeiro de 2013), sendo 7+ anos em SRE e observabilidade (desde setembro de 2019) sobre sistemas críticos
+      de meios de pagamento, telecom e financeiro. Hoje trabalho com confiabilidade e observabilidade de
+      pagamentos de alta disponibilidade, com Dynatrace (Davis AI, baselines e Correlation ID entre jornadas
+      Linux e Mainframe), AWS, Kubernetes/EKS, GitOps com ArgoCD, Terraform, OpenTelemetry e Linux/Mainframe.
+    </p>
+    <p>
+      O que eu entrego no dia a dia cabe em cinco frases. <b>Observabilidade que responde pergunta</b> — dashboards,
+      alertas customizados e correlação de eventos, amarrando a jornada completa de uma transação entre os dois
+      mundos que quase ninguém observa junto. <b>Incidente tratado com método</b> — troubleshooting, RCA e sala de
+      crise para eliminar a falha recorrente em vez de apagar o mesmo incêndio todo mês. <b>Toil que vira automação</b>
+      — playbooks, rotinas de expurgo e procedures operacionais que deixam de depender de mão humana.
+      <b>AIOps aplicado</b> — construí uma plataforma interna de agentes de IA para SRE que integra dados de
+      observabilidade, Jira, ArgoCD, GitLab e Kubernetes para calcular MTTR e recorrência, apoiar diagnóstico e
+      antecipar alertas. <b>Decisão por evidência</b> — SLI, SLO, Error Budget e FinOps como base de priorização,
+      com segurança, LGPD e governança de dados no centro — em ambiente regulado de meios de pagamento, onde segregação de ambientes, rastreabilidade e PCI-DSS são parte do dia a dia.
+    </p>
+    <p class="muted small">
+      Este portfólio é a versão estática do meu modelo de portfólio em Next.js (as seis trilhas acima), publicado em GitHub Pages e mantido sob o mesmo controle de versão. Todo o conteúdo vem do meu CV:
+      onde existe número, ele está atribuído à experiência onde foi medido; onde não existe medição formal,
+      descrevo a capacidade entregue, não um valor.
+    </p>
+  </section>
+
+  <!-- ============ HIGHLIGHTS ============ -->
+  <section class="card" aria-labelledby="h-highlights" id="highlights">
+    <h2 id="h-highlights">Highlights</h2>
+    <ul>
+      <li><b>Observabilidade de ponta a ponta em dois mundos:</b> Dynatrace com Davis AI, baselines e Correlation ID
+        entre jornadas Linux e Mainframe, mais tags padronizadas por aplicação sustentando SLI, SLO e Error Budget por
+        serviço <span class="muted">(Cielo, abr/2026–atual)</span>.</li>
+      <li><b>Incidente com resultado medido:</b> −50% no tempo médio de resposta a incidentes críticos e −70% no tempo
+        médio de detecção <span class="muted">(Tokio Marine)</span>.</li>
+      <li><b>Release que entra:</b> pipelines de CI/CD com +90% na taxa de sucesso de deploy em dev, homologação e
+        produção <span class="muted">(Tokio Marine)</span>.</li>
+      <li><b>Confiabilidade com métrica de tempo:</b> acompanhamento de MTTR, MTBF, MTTA e MTTF junto com os times de
+        desenvolvimento e produção, com dashboards e alertas preventivos na fronteira SRE + FinOps
+        <span class="muted">(Kalendae)</span>.</li>
+      <li><b>AIOps construído por dentro:</b> plataforma interna de agentes de IA para SRE sobre observabilidade, Jira,
+        ArgoCD, GitLab e Kubernetes — MTTR, recorrência, diagnóstico assistido e alerta antecipado
+        <span class="muted">(Cielo)</span>.</li>
+      <li><b>Capacity planning como disciplina:</b> planejamento de capacidade em nuvens públicas/privadas e
+        microsserviços, com APM em Dynatrace, AppDynamics, Elastic, Splunk, Kibana, Grafana e Zabbix
+        <span class="muted">(Telefônica Tech | Vivo Digital)</span>.</li>
+      <li><b>Migração sem derrubar operação:</b> on-premises → Azure, incluindo servidores SWIFT em dev, staging e
+        produção, com melhoria de latência e tempo de resposta <span class="muted">(Vector ITC | Santander)</span>.</li>
+      <li><b>Kubernetes no mundo financeiro:</b> pods com melhoria de 80% em novas implementações, sobre AWS e Azure,
+        middleware IIS, Tomcat e JBoss <span class="muted">(Financeira Alfa)</span>.</li>
+      <li><b>Full-stack quando o projeto pede:</b> React, Python/FastAPI, MongoDB, repositório documental corporativo,
+        APIs REST, dashboards, infraestrutura como código e CI/CD com GitHub Actions
+        <span class="muted">(consultoria independente)</span>.</li>
+      <li><b>Base larga de middleware e alta disponibilidade:</b> WebLogic, WebSphere, IBM HTTP Server, J2EE, Oracle SOA,
+        Liferay, Tomcat, Oracle/DB2 em Linux, Unix e Windows Server — o que hoje sustenta diagnóstico de plataforma em
+        ambientes críticos.</li>
+    </ul>
+    <p class="small muted">
+      Nota de honestidade: os percentuais acima são os que estão registrados no meu CV, cada um na experiência onde
+      foi medido. Sem número na fonte, o item descreve capacidade, não resultado.
+    </p>
+  </section>
+
+  <!-- ============ TRILHAS ============ -->
+  <section class="card" aria-labelledby="h-trilhas" id="trilhas">
+    <h2 id="h-trilhas">Trilhas</h2>
+    <p class="muted">Seis trilhas, cada uma com o que eu faço de fato, as ferramentas que uso e uma prova registrada
+      no meu CV. Cartões no formato do modelo original, agora com conteúdo por trilha.</p>
+    <div class="grid tracks">
+
+      <article class="track" aria-labelledby="t-sre">
+        <h3 id="t-sre"><span class="num" aria-hidden="true">1</span> SRE</h3>
+        <p><b>O que eu faço:</b> defino e acompanho SLI, SLO e Error Budget por serviço sobre tags padronizadas por
+          aplicação; conduzo troubleshooting, RCA e sala de crise com foco na falha recorrente; transformo toil em
+          playbooks, rotinas de expurgo e procedures automatizadas; junto os times de desenvolvimento e produção em
+          torno de MTTR, MTBF, MTTA e MTTF; mantendo postmortem como peça de melhoria contínua rastreável.</p>
+        <ul class="chips" aria-label="Ferramentas da trilha SRE">
+          <li>Dynatrace</li><li>Davis AI</li><li>Jira</li><li>ServiceNow</li><li>ITIL</li><li>Kubernetes</li><li>AWS</li><li>Linux</li><li>Mainframe</li><li>Python</li><li>Shell</li>
+        </ul>
+        <p class="proof"><strong>Prova no CV:</strong> “−50% no tempo médio de resposta a incidentes críticos” e
+          “−70% no de detecção” <em>(Tokio Marine)</em>; “acompanhamento de MTTR, MTBF, MTTA e MTTF com os times de
+          desenvolvimento e produção” <em>(Kalendae)</em>.</p>
+      </article>
+
+      <article class="track" aria-labelledby="t-obs">
+        <h3 id="t-obs"><span class="num" aria-hidden="true">2</span> Observabilidade</h3>
+        <p><b>O que eu faço:</b> desenho e evoluo dashboards, alertas customizados e correlação de eventos; uso
+          baselines e Davis AI para separar ruído de causa; padronizo tags por aplicação para que a telemetria sirva
+          simultaneamente a SLI/SLO, governança de dados e visão de custo; amarro a jornada de uma transação entre
+          Linux e Mainframe via Correlation ID; trabalho com stacks de APM e logs múltiplos e com instrumentação
+          OpenTelemetry quando o sinal ainda não existe.</p>
+        <ul class="chips" aria-label="Ferramentas da trilha de Observabilidade">
+          <li>Dynatrace</li><li>OpenTelemetry</li><li>Grafana</li><li>Kibana / Elastic</li><li>Splunk</li><li>Zabbix</li><li>AppDynamics</li><li>Baselines</li><li>Correlation ID</li>
+        </ul>
+        <p class="proof"><strong>Prova no CV:</strong> “Observabilidade em Dynatrace com Davis AI, baselines e
+          Correlation ID entre Linux e Mainframe” <em>(Cielo)</em>; “incidentes e SLI/SLO com Zabbix, Grafana, Kibana
+          e Dynatrace” <em>(Inmetrics | Claro, projeto E2E)</em>; “APM com Dynatrace, AppDynamics, Elastic, Splunk,
+          Kibana, Grafana e Zabbix” <em>(Telefônica Tech | Vivo Digital)</em>.</p>
+      </article>
+
+      <article class="track" aria-labelledby="t-devops">
+        <h3 id="t-devops"><span class="num" aria-hidden="true">3</span> DevOps</h3>
+        <p><b>O que eu faço:</b> construo e mantenho pipelines de CI/CD com Jenkins, GitLab CI e GitHub Actions; build
+          e atualização de imagens Docker; deploys em dev, homologação e produção com plano de volta; automação de
+          configuração com Ansible e scripts em Shell/Python; integração contínua sobre servidores de aplicação
+          (Tomcat, WebLogic, WebSphere) e apoio à adoção de práticas DevOps em times de middleware.</p>
+        <ul class="chips" aria-label="Ferramentas da trilha DevOps">
+          <li>Jenkins</li><li>GitLab CI</li><li>GitHub Actions</li><li>Docker</li><li>Ansible</li><li>Shell</li><li>Python</li><li>FastAPI</li><li>React</li>
+        </ul>
+        <p class="proof"><strong>Prova no CV:</strong> “Pipelines de CI/CD com aumento de 90% na taxa de sucesso de
+          deploy em dev, homologação e produção” <em>(Tokio Marine)</em>; “CI/CD com Jenkins e GitLab CI em Docker e
+          Kubernetes” <em>(Inmetrics | Claro)</em>; “Implantação do Jenkins para integração contínua no servidor web
+          Tomcat” <em>(Capgemini | Bradesco)</em>.</p>
+      </article>
+
+      <article class="track" aria-labelledby="t-gitops">
+        <h3 id="t-gitops"><span class="num" aria-hidden="true">4</span> GitOps</h3>
+        <p><b>O que eu faço:</b> opero ambiente com GitOps/ArgoCD — manifestos versionados, diff visível antes de
+          aplicar, sincronização contínua, promoção entre ambientes por versão de imagem e reversão por rollback de
+          commit; declaro infraestrutura em Terraform; uso o repositório como única fonte de mudança, o que torna o
+          controle de mudança respondível sem depoimento. Na plataforma de agentes de IA, o ArgoCD é uma das fontes
+          de estado que o agente consulta.</p>
+        <ul class="chips" aria-label="Ferramentas da trilha GitOps">
+          <li>ArgoCD</li><li>Terraform</li><li>GitLab</li><li>GitHub Actions</li><li>Kubernetes / EKS</li><li>AWS</li><li>Azure</li><li>Repositórios privados</li>
+        </ul>
+        <p class="proof"><strong>Prova no CV:</strong> ambiente atual com “GitOps”, ArgoCD e Terraform em AWS/Kubernetes
+          <em>(Cielo)</em>; em projeto confidencial, GitOps com ArgoCD, ambientes efêmeros por pull request e
+          infraestrutura como código fazem parte do <b>desenho em curso</b> para nuvem — apresentado como desenho, sem
+          métrica de produção.</p>
+      </article>
+
+      <article class="track" aria-labelledby="t-finops">
+        <h3 id="t-finops"><span class="num" aria-hidden="true">5</span> FinOps</h3>
+        <p><b>O que eu faço:</b> trato telemetria e infraestrutura como objeto de custo: tags padronizadas por
+          aplicação sustentam a visão de custo e a governança dos dados de monitoramento; rotinas de expurgo e
+          retenção evitam pagar para sempre por sinal morto; capacity planning dimensiona pelo perfil de carga em vez
+          do pico anual; dashboards preventivos unem SRE e FinOps na mesma priorização; orçamento e limites de escala
+          entram no desenho antes do primeiro deploy.</p>
+        <ul class="chips" aria-label="Ferramentas da trilha FinOps">
+          <li>Tags por aplicação</li><li>Dynatrace</li><li>Grafana</li><li>Capacity planning</li><li>Expurgo e retenção</li><li>AWS</li><li>Azure</li><li>HPA / Autoscaler</li>
+        </ul>
+        <p class="proof"><strong>Prova no CV:</strong> “Dashboards e alertas preventivos com SRE e FinOps” e “SLA, SLI,
+          SLO, Error Budget e postmortem” <em>(Kalendae)</em>; “Tags padronizadas por aplicação sustentando SLI, SLO e
+          Error Budget por serviço, telemetria e FinOps” <em>(Cielo)</em>; “planejamento de capacidade em nuvens
+          públicas/privadas e microsserviços” <em>(Telefônica Tech | Vivo Digital)</em>. <b>Sem número:</b> meu CV não
+          traz métrica de custo reduzido — descrevo capacidade.</p>
+      </article>
+
+      <article class="track" aria-labelledby="t-aiops">
+        <h3 id="t-aiops"><span class="num" aria-hidden="true">6</span> AIOps</h3>
+        <p><b>O que eu faço:</b> construí uma plataforma interna de agentes de IA para SRE que integra dados de
+          observabilidade, Jira, ArgoCD, GitLab e Kubernetes para calcular MTTR e recorrência, apoiar diagnóstico e
+          antecipar alertas; uso Davis AI para correlação causal sobre os sinais já coletados; aplico IA onde ela
+          reduz tempo de decisão do time — não como camada de enfeite sobre o dashboard.</p>
+        <ul class="chips" aria-label="Ferramentas da trilha AIOps">
+          <li>Agentes de IA internos</li><li>Dynatrace Davis AI</li><li>Jira</li><li>ArgoCD</li><li>GitLab</li><li>Kubernetes</li><li>Python / FastAPI</li><li>MTTR · recorrência</li>
+        </ul>
+        <p class="proof"><strong>Prova no CV:</strong> “Plataforma interna de agentes de IA para SRE integrada a
+          observabilidade, Jira, ArgoCD e Kubernetes” <em>(Cielo)</em> — frente que o meu resumo descreve como “a mais
+          interessante do meu trabalho”. <b>Sem número:</b> a plataforma calcula MTTR e recorrência sobre os dados que
+          consome; não existe percentual publicado dessa plataforma no meu CV.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ PIRÂMIDE DE CONFIABILIDADE ============ -->
+  <section class="card" aria-labelledby="h-piramide" id="piramide">
+    <h2 id="h-piramide">🔺 Pirâmide de confiabilidade</h2>
+    <p class="muted">
+      A pirâmide do meu modelo (7 camadas, base em Monitoramento) mantém as camadas originais e ganha duas novas —
+      <b>GitOps/ArgoCD e IaC</b> e <b>AIOps e agentes de IA</b> — reordenadas de forma coerente: a base larga continua
+      sendo o sinal (Observabilidade/Monitoramento), porque sem dado não há RCA, release segura, capacity nem custo
+      bem decidido; o topo é a camada que decide e antecipa.
+      Clique ou navegue pelas camadas (setas ↑ ↓) para ver o que cada uma significa na minha prática.
+    </p>
+
+    <div class="pyr-wrap">
+      <div class="pyramid" role="group" aria-label="Pirâmide de confiabilidade com nove camadas, do topo para a base">
+        <!-- widths: 100% na base, 35% no topo, incremento linear — mesma lógica do modelo original -->
+        <button type="button" class="pyr-layer is-top" style="width:35%;background:#FFC107;color:#000" data-color="hl"
+          aria-pressed="true" aria-describedby="pyr-desc"
+          data-name="AIOps e agentes de IA"
+          data-text="Topo da pirâmide: IA que lê o sinal já coletado e devolve decisão — recorrência de falha, MTTR, hipótese de diagnóstico e alerta antecipado. Na minha prática é uma plataforma interna de agentes sobre dados de observabilidade, Jira, ArgoCD, GitLab e Kubernetes."
+          data-why="Prova no CV: plataforma interna de agentes de IA para SRE (Cielo).">AIOps e agentes de IA</button>
+
+        <button type="button" class="pyr-layer" style="width:43%;background:#FFC107;color:#000" data-color="hl"
+          aria-pressed="false" aria-describedby="pyr-desc"
+          data-name="FinOps e redução de toil"
+          data-text="Camada original 'Redução de Toil (FinOps)', agora explícita nos dois lados do mesmo problema: tarefas repetitivas viram playbooks, rotinas de expurgo e procedures automatizadas; telemetria e infraestrutura viram objeto de custo, com tags por aplicação e capacidade dimensionada por perfil de carga."
+          data-why="Prova no CV: playbooks e expurgo (Cielo); dashboards preventivos com SRE + FinOps (Kalendae).">FinOps e redução de toil</button>
+
+        <button type="button" class="pyr-layer" style="width:51%;background:#6C757D" data-color="gray"
+          aria-pressed="false" aria-describedby="pyr-desc"
+          data-name="Capacity Planning"
+          data-text="Projeção de demanda e escalabilidade: dimensionar ambiente público/privado e microsserviços pelo comportamento real da carga, com dados de APM e de negócio — inclusive calculadora de métricas de negócio e infraestrutura."
+          data-why="Prova no CV: capacity planning em nuvens públicas/privadas (Vivo Digital); arquitetura do projeto Capacity E2E (Inmetrics | Claro).">Capacity Planning</button>
+
+        <button type="button" class="pyr-layer" style="width:59%;background:#007BFF" data-color="blue"
+          aria-pressed="false" aria-describedby="pyr-desc"
+          data-name="Desenvolvimento / Tooling"
+          data-text="Ferramenta interna é produto: API, dashboards, scripts e agentes que encurtam o caminho entre a pergunta do time e a resposta do sistema. Full-stack quando necessário (React, FastAPI, MongoDB, integrações, APIs REST)."
+          data-why="Prova no CV: plataforma full-stack e integrações em projeto confidencial; scripts e procedures de automação (Cielo).">Desenvolvimento / Tooling</button>
+
+        <button type="button" class="pyr-layer" style="width:68%;background:#007BFF" data-color="blue"
+          aria-pressed="false" aria-describedby="pyr-desc"
+          data-name="GitOps / ArgoCD e IaC"
+          data-text="Camada nova: a mudança entra por commit. Manifestos versionados, diff antes de aplicar, promoção por versão de imagem, rollback de commit e infraestrutura declarada em Terraform. É o controle de mudança que ambiente crítico precisa poder mostrar."
+          data-why="Prova no CV: GitOps com ArgoCD, Terraform, AWS e Kubernetes/EKS (Cielo); desenho GitOps + ambientes efêmeros em projeto confidencial (fase de desenho).">GitOps / ArgoCD e IaC</button>
+
+        <button type="button" class="pyr-layer" style="width:76%;background:#FFC107;color:#000" data-color="hl"
+          aria-pressed="false" aria-describedby="pyr-desc"
+          data-name="Testes / Release (CI/CD)"
+          data-text="Camada original mantida: lançamento rápido e seguro com Jenkins, GitLab CI e GitHub Actions sobre Docker/Kubernetes, em dev, homologação e produção, com suíte de regressão e plano de volta por release."
+          data-why="Prova no CV: +90% na taxa de sucesso de deploy (Tokio Marine); Jenkins + imagens Docker (Indra).">Testes / Release (CI/CD)</button>
+
+        <button type="button" class="pyr-layer" style="width:84%;background:#007BFF" data-color="blue"
+          aria-pressed="false" aria-describedby="pyr-desc"
+          data-name="Postmortems / RCA"
+          data-text="Aprender com a falha com método: análise de causa raiz, sala de crise, ação preventiva rastreável. O objetivo declarado é eliminar a falha recorrente, não documentar o incêndio."
+          data-why="Prova no CV: RCA e sala de crise em falhas recorrentes (Cielo); postmortem no ciclo de SLA/SLI/SLO (Kalendae).">Postmortems / RCA</button>
+
+        <button type="button" class="pyr-layer" style="width:92%;background:#6C757D" data-color="gray"
+          aria-pressed="false" aria-describedby="pyr-desc"
+          data-name="Resposta a Incidentes"
+          data-text="Mitigação rápida e organizada: playbooks, procedures automatizadas, paging e atendimento de produção em ambiente 24×7, com plantões e GMUDs programadas na base da minha carreira em middleware."
+          data-why="Prova no CV: −50% tempo de resposta e −70% tempo de detecção em incidentes críticos (Tokio Marine).">Resposta a Incidentes</button>
+
+        <button type="button" class="pyr-layer is-base" style="width:100%;background:#FFC107;color:#000" data-color="hl"
+          aria-pressed="false" aria-describedby="pyr-desc"
+          data-name="Observabilidade / Monitoramento (base)"
+          data-text="Base larga da pirâmide: sem sinal não existe decisão. Dashboards, alertas customizados, correlação de eventos, baselines, Davis AI e Correlation ID entre Linux e Mainframe, sobre Dynatrace, OpenTelemetry, Grafana, Kibana/Elastic, Splunk, Zabbix e AppDynamics."
+          data-why="Prova no CV: observabilidade em Dynatrace com Correlation ID entre Linux e Mainframe (Cielo); stack completa de APM (Vivo Digital).">Observabilidade / Monitoramento</button>
+      </div>
+
+      <div>
+        <div class="pyr-detail" id="pyr-desc" aria-live="polite">
+          <h4 id="pyr-title">AIOps e agentes de IA</h4>
+          <p id="pyr-text" style="margin:0">Topo da pirâmide: IA que lê o sinal já coletado e devolve decisão —
+            recorrência de falha, MTTR, hipótese de diagnóstico e alerta antecipado. Na minha prática é uma plataforma
+            interna de agentes sobre dados de observabilidade, Jira, ArgoCD, GitLab e Kubernetes.</p>
+          <p class="why" id="pyr-why">Prova no CV: plataforma interna de agentes de IA para SRE (Cielo).</p>
+        </div>
+        <p class="legend">
+          <span><i style="background:#FFC107"></i>Camada de destaque (herança do modelo: Monitoramento, CI/CD e FinOps)</span>
+          <span><i style="background:#007BFF"></i>Camada de engenharia (tooling, mudança, causa)</span>
+          <span><i style="background:#6C757D"></i>Camada operacional (capacidade, resposta)</span>
+        </p>
+
+        <h3 style="margin-top:18px">Camadas, do topo para a base, e por que nessa ordem</h3>
+        <ol class="layers-list small">
+          <li><b>AIOps e agentes de IA</b> — decisão assistida e alerta antecipado em cima do sinal existente; coroa a pirâmide porque só funciona com as camadas abaixo maduras.</li>
+          <li><b>FinOps e redução de toil</b> — custo e esforço repetitivo tratados como decisão de engenharia, não como efeito colateral da operação.</li>
+          <li><b>Capacity Planning</b> — a projeção de demanda que transforma incidente de capacidade em compra planejada.</li>
+          <li><b>Desenvolvimento / Tooling</b> — a ferramenta interna que elimina a etapa manual; é onde o toil morre de verdade.</li>
+          <li><b>GitOps / ArgoCD e IaC</b> — toda mudança entra por commit versionado, com diff, sincronização e rollback; controle de mudança auditável.</li>
+          <li><b>Testes / Release (CI/CD)</b> — pipeline que faz o deploy entrar na primeira tentativa, em dev, homologação e produção.</li>
+          <li><b>Postmortems / RCA</b> — a falha vira causa identificada e ação preventiva rastreável.</li>
+          <li><b>Resposta a Incidentes</b> — mitigar primeiro com playbook e automação, investigar depois; a camada que o negócio sente.</li>
+          <li><b>Observabilidade / Monitoramento</b> — base larga: métricas, logs, alertas e correlação de eventos, inclusive entre Linux e Mainframe.</li>
+        </ol>
+        <p class="small muted">No código Next.js, estas nove camadas estão em
+          <code>components/SREPyramid.tsx</code> (mesmas constantes de cor do original: <code>#007BFF</code>,
+          <code>#FFC107</code>, <code>#6C757D</code>); a base larga e o clipPath do topo seguem a lógica do modelo.
+          As cores de fundo são as originais — apenas a cor do texto sobre a camada azul foi escurecida
+          (<code>#0b1220</code> em vez de branco) para atender AA de contraste, e a descrição de cada camada existe em
+          texto, não só no <code>title</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJETOS ============ -->
+  <section class="card" aria-labelledby="h-projetos" id="projetos">
+    <h2 id="h-projetos">Projects</h2>
+    <p class="muted">Repositórios públicos reais. O caso fiscal abaixo aparece na forma de referência
+      anonimizada: desenho, decisões e arquitetura publicados sem cliente, sem ambiente e
+      sem dado real.</p>
+    <ul class="projects">
+      <li>
+        <a href="https://github.com/jraalves/observability-golden-signals-stack" target="_blank" rel="noreferrer">
+          Observability Golden Signals Stack</a>
+        <p class="meta">Laboratório de observabilidade com sinais de ouro, Dynatrace, OpenTelemetry e Prometheus —
+          trilha de Observabilidade.</p>
+      </li>
+      <li>
+        <a href="https://github.com/jraalves/sre-senior-lab" target="_blank" rel="noreferrer">SRE Senior Lab</a>
+        <p class="meta">Laboratório prático de SRE sênior com observabilidade, IaC, CI/CD e automação — trilhas SRE,
+          DevOps e GitOps.</p>
+      </li>
+      <li>
+        <a href="https://github.com/jraalves/sre-aiops-agent-reference" target="_blank" rel="noreferrer">AIOps Agent Reference</a>
+        <p class="meta">Referência de plataforma de agentes de IA para SRE: observabilidade, tickets, GitOps e
+          cluster como fontes de contexto para cálculo de MTTR, recorrência e diagnóstico assistido.</p>
+      </li>
+      <li>
+        <a href="https://github.com/jraalves/otel-correlation-design" target="_blank" rel="noreferrer">OpenTelemetry Correlation Design</a>
+        <p class="meta">Desenho de correlação de eventos entre jornadas Linux e mainframe com Correlation ID,
+          baselines e tagging padronizado por aplicação.</p>
+      </li>
+      <li>
+        <a href="https://github.com/jraalves/git-secret-guard" target="_blank" rel="noreferrer">Git Secret Guard</a>
+        <p class="meta">Guarda de segredos em repositório: bloqueio de credencial em commit, rotação orientada por
+          evidência e trilha de auditoria — a parte de segurança que sustenta o GitOps.</p>
+      </li>
+      <li>
+        <a href="https://github.com/jraalves/elasticsearch-na-pratica" target="_blank" rel="noreferrer">Elasticsearch na Prática</a>
+        <p class="meta">Busca e análise de logs com Elastic — base para a trilha de Observabilidade sobre
+          Kibana/Elastic.</p>
+      </li>
+      <li>
+        <a href="https://github.com/jraalves/profile-assets" target="_blank" rel="noreferrer">Pipelines de CI/CD versionados</a>
+        <p class="meta">As definições de pipeline que eu escrevo e versiono — GitHub Actions e GitLab CI com lint, testes, validação de regras de observabilidade e checagem de anonimato. A execução local é a que sustenta a publicação: <code>make ci</code> nos laboratórios, com exit 0. Para ativar na nuvem basta copiar o YAML para <code>.github/workflows/</code> — prefiro mostrar a definição exata a exibir um badge que não roda.</p>
+      </li>
+      <li class="confidencial">
+        <b>Plataforma de gestão fiscal e conformidade tributária (projeto confidencial)</b> · 2025–2026
+        <p class="meta">
+          Fonte única de verdade para acompanhamento fiscal de uma carteira de empresas: guias, certidões, débitos,
+          obrigações acessórias, documentos, alertas de vencimento, KPIs e trilha de auditoria.
+          Arquitetura em três camadas — SPA React consumindo API REST única em FastAPI, PostgreSQL com migrations
+          versionadas, exclusão lógica e logs de auditoria; integrações laterais com repositório documental
+          corporativo, provedor de identidade corporativo (escopos mínimos) e OCR/robôs onde não existe API;
+          execução com Docker e dashboards Grafana provisionados como código; RBAC de quatro perfis aplicado rota a
+          rota. Evolução em desenho para AWS/Kubernetes (EKS), GitOps com ArgoCD, Terraform, OpenTelemetry, cofre de
+          segredos, ambientes efêmeros por pull request e migração gradual com padrão strangler.
+          <b>Versão 2.0.0 entregue em jan/2026; a fase de nuvem é desenho em curso, sem métrica de produção.</b>
+          Cliente, ambiente e credenciais não são identificados. O código original é
+          confidencial; o que publico é a
+          <a href="https://github.com/jraalves/fiscal-automation-case" target="_blank" rel="noreferrer">referência anonimizada do desenho</a>
+          (URLs de exemplo, ingress na borda e zero dado de cliente).
+        </p>
+      </li>
+      <li>
+        <a href="https://github.com/jraalves" target="_blank" rel="noreferrer">Perfil no GitHub — todos os repositórios</a>
+        <p class="meta">Outros repositórios meus estão listados no perfil; os relacionados ao projeto confidencial
+          ficam fora desta página por restrição de sigilo.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ PAPEL DO SRE NO TIME ============ -->
+  <section class="card" aria-labelledby="h-papel" id="papel-sre">
+    <h2 id="h-papel">🧭 Papel do SRE no Time</h2>
+    <p>
+      No time, o SRE é o elo entre desenvolvimento, operações e produto — e eu trabalho exatamente nesse vão. Meu
+      trabalho não é “monitorar servidor”: é transformar uma dúvida de negócio (“essa jornada está piorando?”) em uma
+      afirmação que dá para defender em reunião com dados. Para isso existem duas ferramentas que uso todos os dias e
+      que quero explicar com exemplo concreto, porque elas resumem o papel.
+    </p>
+    <h3>Exemplo 1 — Correlation ID entre Linux e Mainframe</h3>
+    <p>
+      Em meios de pagamento, uma transação atravessa dois mundos: a jornada começa em serviço Linux, em nuvem, e
+      termina em Mainframe. Cada time observa a sua metade, e ninguém observa a inteira — quando a pergunta é
+      “por que essa transação demorou?”, a resposta vira depoimento de três áreas. O que eu faço é desenhar e manter a
+      correlação: Correlation ID amarrando a mesma jornada entre Linux e Mainframe, sobre dashboards, alertas
+      customizados, baselines e Davis AI no Dynatrace, com tags padronizadas por aplicação. O efeito prático é que a
+      sala de crise deixa de começar do zero: existe um caminho de evidência, do ponto de entrada até o sistema
+      legado. É também o que sustenta as outras decisões — um SLI por serviço só significa algo se o sinal que o
+      compõe é confiável e é do serviço certo.
+    </p>
+    <h3>Exemplo 2 — Error Budget como contrato, não como castigo</h3>
+    <p>
+      Error Budget é a peça que organiza a conversa entre velocidade e estabilidade. Com SLI medido, SLO acordado e
+      orçamento de erro visível por serviço, a discussão deixa de ser “o time de infraestrutura travou o deploy” e
+      passa a ser “quanto de indisponibilidade este serviço pode consumir este mês, e o que estamos dispostos a pagar
+      por isso”. Na prática, é isso que eu uso para decidir três coisas: quando o time de feature pode publicar, quando
+      a conversa é confiabilidade e quando o trabalho é eliminar toil e falha recorrente — porque incêndio repetido
+      consome o orçamento que deveria financiar lançamento. O mesmo raciocínio serve ao FinOps: capacidade que ninguém
+      usa é custo, e custo que ninguém mede é decisão às cegas. Por isso as tags padronizadas por aplicação sustentam
+      SLI, SLO, Error Budget, governança de telemetria e visão de custo ao mesmo tempo — um único esforço de
+      padronização, quatro decisões que passam a ter evidência.
+    </p>
+    <hr class="sep">
+    <p>
+      Fora dos exemplos, o resto é rotina de método: incidente tratado com troubleshooting, RCA e sala de crise;
+      postmortem que gera ação preventiva rastreável; playbook e procedure que saem do caminho do humano; e AIOps como
+      amplificador — minha plataforma interna de agentes de IA calcula MTTR e recorrência sobre dados de
+      observabilidade, Jira, ArgoCD, GitLab e Kubernetes, para antecipar alerta e apoiar diagnóstico. O objetivo do
+      papel é sempre o mesmo: manter a disponibilidade que o negócio promete, com automação no lugar de toil e decisão
+      baseada em evidência no lugar de opinião.
+    </p>
+    <p class="small muted">
+      Referência ao modelo: nesta versão estática, o documento “Papel do SRE no Time” está no corpo da página.
+      Na versão Next.js, o link aponta para <code>/papel-do-sre-no-time.md</code>, como no original.
+    </p>
+    <p>
+      <a class="btn ghost" href="#piramide">Ver a pirâmide de confiabilidade →</a>
+    </p>
+  </section>
+
+  <!-- ============ TRAJETÓRIA ============ -->
+  <section class="card skip-marker" aria-labelledby="h-traj" id="trajetoria">
+    <h2 id="h-traj">Trajetória — 2013 → 2026</h2>
+    <p class="muted">Da primeira para a última, como no CV. As etiquetas em cada linha indicam de qual trilha este
+      período trouxe evidência.</p>
+    <ol class="timeline">
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">jan/2013 – jan/2014</span></div>
+        <span class="tl-role">Analista de Sistemas | Suporte a Aplicações</span> — <span class="tl-org">Produban | Banco Santander</span>
+        <p class="tl-note">Suporte a portais de grande acesso em produção: Internet Banking, intranet e site
+          institucional; Java em alta disponibilidade sobre WebSphere, Liferay, Fatwire, Tomcat, Oracle e DB2.</p>
+        <ul class="tl-tags"><li>SRE</li><li>Produção 24×7</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">jan/2014 – jan/2015</span></div>
+        <span class="tl-role">Analista de Sistemas | Suporte a Aplicações</span> — <span class="tl-org">AGSNasoft | Banco Santander</span>
+        <p class="tl-note">Suporte à implantação da infraestrutura de servidores e portais de alto acesso; certificados
+          digitais multidomínio e wildcards junto à Segurança da Informação.</p>
+        <ul class="tl-tags"><li>Segurança</li><li>IaC na prática</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">fev/2014 – fev/2015</span></div>
+        <span class="tl-role">Analista de Infraestrutura Pleno</span> — <span class="tl-org">Capgemini | Bradesco</span>
+        <p class="tl-note">Desenho da arquitetura de infraestrutura dos servidores WebSphere da unidade de negócio;
+          deploy, troubleshooting e pipeline Jenkins para Tomcat. (Período consta no CV com sobreposição de meses em
+          relação à experiência anterior.)</p>
+        <ul class="tl-tags"><li>DevOps</li><li>Jenkins</li><li>Arquitetura</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">mar/2015 – mai/2017</span></div>
+        <span class="tl-role">Analista Middleware Pleno</span> — <span class="tl-org">Connectis Brasil | Telefônica/Vivo</span>
+        <p class="tl-note">Migração do ambiente móvel/fixo de São Paulo para o NDC, no core team; WebLogic, WebSphere,
+          IBM HTTP Server, IIS e Apache em Linux, Unix e Windows Server; análise de performance, monitoramento e
+          capacity planning de ambientes críticos.</p>
+        <ul class="tl-tags"><li>Observabilidade</li><li>Capacity</li><li>Migração</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">jan/2018 – jul/2018</span></div>
+        <span class="tl-role">Analista Middleware</span> — <span class="tl-org">HITSS do Brasil | NET | Claro | Embratel</span>
+        <p class="tl-note">Instalação, configuração e manutenção de servidores WebLogic e Oracle SOA Suite; chamados de
+          produção em Linux Red Hat e Windows Server 2012 R2; apoio à adoção de DevOps.</p>
+        <ul class="tl-tags"><li>DevOps</li><li>Linux</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">ago/2018 – set/2019</span></div>
+        <span class="tl-role">Analista Middleware</span> — <span class="tl-org">Indra</span>
+        <p class="tl-note">Deploy em integração contínua com pipeline Jenkins e atualização de imagens Docker; WebLogic,
+          WebSphere e SOA em Linux Red Hat; GMUDs programadas e plantões.</p>
+        <ul class="tl-tags"><li>DevOps</li><li>Docker</li><li>Troca de mudança</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">set/2019 – jan/2022</span></div>
+        <span class="tl-role">SRE | Middleware</span> — <span class="tl-org">Vector ITC | Santander</span>
+        <p class="tl-note">Pagamentos móveis e Internet Banking em produção; migração on-premises → Azure e de
+          servidores SWIFT em staging, dev e produção, com melhoria de latência e tempo de resposta; monitoramento com
+          Dynatrace, Grafana e Kibana e fluxo em ServiceNow/Splunk/Jira.</p>
+        <ul class="tl-tags"><li>SRE</li><li>Observabilidade</li><li>Azure</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">fev/2022 – nov/2022</span></div>
+        <span class="tl-role">Capacity Planning | SRE</span> — <span class="tl-org">Telefônica Tech | Vivo Digital</span>
+        <p class="tl-note">Planejamento de capacidade em nuvens públicas/privadas e microsserviços; APM com Dynatrace,
+          AppDynamics, Elastic, Splunk, Kibana, Grafana e Zabbix; ITIL e Agile. (CV registra sobreposição de meses com
+          a experiência seguinte.)</p>
+        <ul class="tl-tags"><li>Capacity</li><li>FinOps</li><li>Observabilidade</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">ago/2022 – mar/2023</span></div>
+        <span class="tl-role">Arquitetura de Soluções | Middleware | SRE</span> — <span class="tl-org">Financeira Alfa</span>
+        <p class="tl-note">Arquitetura de middleware e distribuição de aplicações on-premises em Windows e Linux; IIS,
+          Tomcat e JBoss; workloads Kubernetes com melhoria de 80% em novas implementações; serviços AWS e Azure.</p>
+        <ul class="tl-tags"><li>Kubernetes</li><li>DevOps</li><li>Arquitetura</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">abr/2023 – dez/2023</span></div>
+        <span class="tl-role">Middleware | DevOps Engineer | SRE</span> — <span class="tl-org">Meta | Tokio Marine Brasil</span>
+        <p class="tl-note">−50% no tempo médio de resposta a incidentes críticos e −70% no de detecção; pipelines de
+          CI/CD com +90% na taxa de sucesso de deploy em dev, homologação e produção.</p>
+        <ul class="tl-tags"><li>SRE</li><li>DevOps</li><li>Incidentes</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">dez/2023 – out/2024</span></div>
+        <span class="tl-role">Site Reliability Engineer</span> — <span class="tl-org">Kalendae</span>
+        <p class="tl-note">MTTR, MTBF, MTTA e MTTF acompanhados com os times de desenvolvimento e produção; dashboards e
+          alertas preventivos com SRE e FinOps; SLA, SLI, SLO, Error Budget e postmortem.</p>
+        <ul class="tl-tags"><li>SRE</li><li>FinOps</li><li>SLO</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">dez/2024 – abr/2025</span></div>
+        <span class="tl-role">Site Reliability Engineer — Projeto E2E</span> — <span class="tl-org">Inmetrics | Claro</span>
+        <p class="tl-note">Arquitetura do projeto Capacity E2E e calculadora de métricas de negócio e infraestrutura;
+          CI/CD com Jenkins e GitLab CI em Docker e Kubernetes; incidentes e SLI/SLO com Zabbix, Grafana, Kibana e
+          Dynatrace.</p>
+        <ul class="tl-tags"><li>SRE</li><li>Observabilidade</li><li>Capacity</li></ul>
+      </li>
+      <li class="tl-item">
+        <div class="tl-head"><span class="tl-period">nov/2025 – atual</span></div>
+        <span class="tl-role">Consultor de Tecnologia (freelancer, atividade em paralelo)</span>
+        <p class="tl-note">Plataforma de gestão fiscal e conformidade tributária (projeto confidencial): full-stack com
+          React, Python/FastAPI e MongoDB, API REST, busca e gestão de informações em repositório documental
+          corporativo, dashboards e CI/CD com GitHub Actions.</p>
+        <ul class="tl-tags"><li>DevOps</li><li>Tooling</li><li>Segurança</li></ul>
+      </li>
+      <li class="tl-item now">
+        <div class="tl-head"><span class="tl-period">abr/2026 – atual</span></div>
+        <span class="tl-role">Especialista em SRE e Observabilidade</span> — <span class="tl-org">Cielo</span>
+        <p class="tl-note">Confiabilidade e observabilidade de pagamentos de alta disponibilidade: Dynatrace com Davis
+          AI, baselines e Correlation ID entre Linux e Mainframe; tags padronizadas sustentando SLI, SLO, Error Budget,
+          telemetria e FinOps; troubleshooting, RCA e sala de crise; playbooks e rotinas de expurgo; plataforma interna
+          de agentes de IA para SRE sobre observabilidade, Jira, ArgoCD, GitLab e Kubernetes; ambiente AWS, Kubernetes
+          (EKS), GitOps, Terraform, Python, Shell, Linux e Mainframe.</p>
+        <ul class="tl-tags"><li>SRE</li><li>Observabilidade</li><li>GitOps</li><li>FinOps</li><li>AIOps</li></ul>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ FORMAÇÃO / CERTIFICAÇÕES / IDIOMAS ============ -->
+  <section class="card" id="formacao" aria-labelledby="h-form">
+    <h2 id="h-form" style="margin-bottom:6px">Formação, Certificações e Idiomas</h2>
+    <div class="grid cols">
+      <div>
+        <h3>Formação</h3>
+        <ul>
+          <li><b>MBA em Arquitetura de Soluções</b> — FIAP, 2014–2015</li>
+          <li><b>Tecnologia em Informática para Gestão de Negócios</b> — FATEC-SP, 2008–2011</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Certificações e treinamentos</h3>
+        <ul>
+          <li><b>CertiProf DEPC</b> — DevOps Essentials Professional Certificate, 2019</li>
+          <li>Formação Linux — 4linux</li>
+          <li>Arquiteto AWS — Big Data Systems</li>
+          <li>Plataforma de desenvolvimento Microsoft .NET — Treinamento técnico</li>
+        </ul>
+        <p class="small muted">Nenhum outro certificado é declarado: sem registro verificável, não coloco nome de
+          certificação nesta página.</p>
+      </div>
+      <div>
+        <h3>Idiomas</h3>
+        <ul>
+          <li><b>Português</b> — nativo</li>
+          <li><b>Inglês</b> — em desenvolvimento técnico: leio documentação e consumo conteúdo de SRE em inglês</li>
+          <li><b>Espanhol</b> — básico</li>
+          <li><b>Francês</b> — básico</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENGLISH SUMMARY ============ -->
+  <section class="card en skip-marker" lang="en" aria-labelledby="h-en" id="english">
+    <h2 id="h-en">English summary</h2>
+    <p class="lead">
+      SRE with 13+ years in the market (since January 2013), 7+ of them in SRE and observability (since September 2019) over mission-critical payment, telecom and
+      financial platforms. Currently an SRE &amp; Observability Specialist focused on high-availability payments.
+    </p>
+    <dl>
+      <div class="row"><dt>SRE</dt><dd>Service-level objectives with SLI, error budgets and standardized per-application
+        tagging; troubleshooting, root cause analysis and crisis-room work aimed at eliminating recurring failure;
+        runbooks and purge routines that remove toil. Measured results: −50% mean time to respond to critical incidents
+        and −70% mean time to detect (Tokio Marine).</dd></div>
+      <div class="row"><dt>Observability</dt><dd>Dynatrace dashboards, custom alerts and event correlation with Davis AI
+        and baselines; Correlation IDs that tie a transaction journey across Linux and Mainframe; plus Grafana,
+        Kibana/Elastic, Splunk, Zabbix, AppDynamics and OpenTelemetry instrumentation.</dd></div>
+      <div class="row"><dt>DevOps</dt><dd>CI/CD with Jenkins, GitLab CI and GitHub Actions over Docker and Kubernetes,
+        across dev, staging and production — pipelines that raised the deploy success rate by 90% (Tokio Marine);
+        Ansible, Shell and Python automation; earlier career built on WebLogic, WebSphere, SOA, Tomcat and J2EE.</dd></div>
+      <div class="row"><dt>GitOps</dt><dd>ArgoCD as the operational model — versioned manifests, visible diff before
+        apply, promotion by image tag and rollback by commit — with Terraform-declared infrastructure on AWS,
+        Kubernetes/EKS and Azure.</dd></div>
+      <div class="row"><dt>FinOps</dt><dd>Telemetry and capacity treated as cost decisions: per-application tags feeding
+        cost visibility, purge and retention routines, capacity planning by workload profile instead of annual peak, and
+        preventive dashboards combining SRE and FinOps (Kalendae, Telefônica Tech | Vivo Digital). No cost percentage is
+        claimed — the CV has none.</dd></div>
+      <div class="row"><dt>AIOps</dt><dd>Built an internal AI-agent platform for SRE that combines observability data,
+        Jira, ArgoCD, GitLab and Kubernetes to compute MTTR and recurrence, support diagnostics and anticipate alerts.
+        Design and build-out, measured on the data it consumes.</dd></div>
+      <div class="row"><dt>Confidential project</dt><dd>Tax management &amp; compliance platform (2025–2026): React SPA +
+        FastAPI + PostgreSQL source of truth, audit trail and four-role RBAC enforced per route, corporate document
+        repository and identity provider integrations, OCR/RPA ingestion, Grafana dashboards as code; cloud target
+        design on AWS/EKS with GitOps, Terraform, secrets vault, OpenTelemetry, ephemeral per-pull-request environments
+        and strangler migration. No production metrics are claimed for that phase.</dd></div>
+      <div class="row"><dt>Education</dt><dd>MBA in Solutions Architecture (FIAP, 2014–2015) · Technology in IT for
+        Business Management (FATEC-SP, 2008–2011) · CertiProf DevOps Essentials Professional Certificate (2019).</dd></div>
+      <div class="row"><dt>Languages</dt><dd>Portuguese (native) · English (technical reading of documentation and SRE
+        content, in progress) · Spanish (basic) · French (basic).</dd></div>
+      <div class="row"><dt>Contact</dt><dd><a href="https://github.com/jraalves" target="_blank" rel="noreferrer">github.com/jraalves</a>
+        · <a href="https://www.linkedin.com/in/joaorenatoalves-sre" target="_blank" rel="noreferrer">linkedin.com/in/joaorenatoalves-sre</a>
+        · São Paulo, SP · <a href="cv.pdf" target="_blank" rel="noreferrer">cv.pdf</a></dd></div>
+    </dl>
+  </section>
+
+  <!-- ============ CURRÍCULO ============ -->
+  <section class="card" aria-labelledby="h-cv" id="curriculo">
+    <h2 id="h-cv">📄 Currículo</h2>
+    <p>
+      <a class="btn" href="cv.pdf" target="_blank" rel="noreferrer">Abrir Currículo (PDF, 2 páginas PT + EN)</a>
+    </p>
+    <p class="small muted">
+      Página 1 em português, página 2 em inglês (versão condensada). No projeto Next.js, o link do modelo aponta para
+      <code>/Curriculum_JoaoRenatoAlves.PDF</code>; aqui o arquivo é <code>cv.pdf</code>, na mesma pasta desta página.
+    </p>
+  </section>
+
+  <!-- ============ CONTATO ============ -->
+  <section class="card" aria-labelledby="h-contato" id="contato">
+    <h2 id="h-contato">Contato</h2>
+    <p>
+      Aberto a conversas sobre SRE, observabilidade, AIOps e engenharia de plataforma em pagamento, telecom e serviços
+      financeiros.
+    </p>
+    <ul>
+      <li>LinkedIn — <a href="https://www.linkedin.com/in/joaorenatoalves-sre" target="_blank" rel="noreferrer">linkedin.com/in/joaorenatoalves-sre</a></li>
+      <li>GitHub — <a href="https://github.com/jraalves" target="_blank" rel="noreferrer">github.com/jraalves</a></li>
+      <li>Localização — São Paulo, SP, Brasil</li>
+      <li>Currículo — <a href="cv.pdf" target="_blank" rel="noreferrer">cv.pdf</a></li>
+    </ul>
+    <p class="small muted">E-mail e telefone ficam no PDF do currículo, que mantenho versionado fora do código deste
+      site.</p>
+  </section>
+
+  <footer class="site">
+    <p>© <span id="year">2026</span> João Renato Alves — Especialista SRE &amp; Observabilidade · São Paulo, SP.
+      <span class="no-print">Página estática, sem recursos externos.</span></p>
+  </footer>
+</main>
+
+<script>
+  /* Pirâmide: sem dependências. Cada camada é um botão acessível; a descrição vai
+     para uma região aria-live. Sem JavaScript, o texto inicial e a lista abaixo da
+     pirâmide já dão o conteúdo completo. */
+  (function () {
+    var layers = Array.prototype.slice.call(document.querySelectorAll('.pyr-layer'));
+    var title = document.getElementById('pyr-title');
+    var text = document.getElementById('pyr-text');
+    var why = document.getElementById('pyr-why');
+
+    function select(btn) {
+      layers.forEach(function (l) { l.setAttribute('aria-pressed', 'false'); });
+      btn.setAttribute('aria-pressed', 'true');
+      title.textContent = btn.getAttribute('data-name');
+      text.textContent = btn.getAttribute('data-text');
+      why.textContent = btn.getAttribute('data-why');
+    }
+
+    layers.forEach(function (btn, i) {
+      btn.addEventListener('click', function () { select(btn); });
+      btn.addEventListener('mouseenter', function () { select(btn); });
+      btn.addEventListener('focus', function () { select(btn); });
+      btn.addEventListener('keydown', function (e) {
+        var j = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? i + 1
+              : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? i - 1 : -1;
+        if (j >= 0 && j < layers.length) { e.preventDefault(); layers[j].focus(); select(layers[j]); }
+      });
+    });
+
+    var y = document.getElementById('year');
+    if (y) { y.textContent = String(new Date().getFullYear()); }
+  })();
+</script>
+</body>
+</html>
